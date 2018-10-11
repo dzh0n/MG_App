@@ -63,16 +63,20 @@
             <div class="form-row" style="margin-bottom: 5px;">
                 <div class="form-row-item">
                     <label class="checkbox">
-                        <input id="ytUser_check" type="hidden" value="0" name="User[check]"><input name="User[check]" id="User_check" value="1" checked="checked" type="checkbox">                    <div class="checkbox__text">Регистрируясь на сайте, я принимаю все условия договора-оферты по использованию сервиса</div>
+                        <input name="User[check]" id="User_check" value="1" checked="checked" type="checkbox" disabled>
+                        <div class="checkbox__text">Регистрируясь, я принимаю все условия договора-оферты по использованию сервиса</div>
                     </label>
-                    <div class="errorMessage" id="User_check_em_" style="display:none"></div>            </div>
+                    <div class="errorMessage" id="User_check_em_" style="display:none"></div>
+                </div>
             </div>
             <div class="form-row">
                 <div class="form-row-item">
                     <label class="checkbox">
-                        <input id="ytUser_personal_data" type="hidden" value="0" name="User[personal_data]"><input name="User[personal_data]" id="User_personal_data" value="1" checked="checked" type="checkbox">                    <div class="checkbox__text">Регистрируясь на сайте, я соглашаюсь на обработку моих персональных данных</div>
+                        <input name="User[personal_data]" id="User_personal_data" value="1" checked="checked" type="checkbox" disabled>
+                        <div class="checkbox__text">Регистрируясь, я соглашаюсь на обработку моих персональных данных</div>
                     </label>
-                    <div class="errorMessage" id="User_personal_data_em_" style="display:none"></div>            </div>
+                    <div class="errorMessage" id="User_personal_data_em_" style="display:none"></div>
+                </div>
             </div>
 
         </form>

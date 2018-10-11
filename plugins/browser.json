@@ -24,6 +24,9 @@
         },
         "cordova-plugin-device": {
             "PACKAGE_NAME": "ru.mg.app"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "ru.mg.app"
         }
     },
     "dependent_plugins": {}
