@@ -62,7 +62,7 @@ document.addEventListener("deviceready", function(){
 });
 
 $(document).ready(function () {
-    PullToRefresh.init({
+   /* PullToRefresh.init({
         mainElement: 'body',
         onRefresh: function(){
             // What do you want to do when the user does the pull-to-refresh gesture
@@ -71,6 +71,6 @@ $(document).ready(function () {
         iconArrow: '<span class="fa fa-arrow-down"></span>', // The icon for both instructionsPullToRefresh and instructionsReleaseToRefresh
         instructionsPullToRefresh: "",
         instructionsReleaseToRefresh: ""
-    });
+    });*/
 });
 
