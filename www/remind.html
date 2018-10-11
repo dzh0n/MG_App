@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+            <title>Восстановление пароля</title>
+            <link rel="stylesheet" type="text/css" href="css/global.css" />
+            <link href="css/fonts/roboto/stylesheet.css" rel="stylesheet">
+            <link href="css/fonts/fontawesome/css/all.min.css" rel="stylesheet">
+        </head>
+<body class="bar">
+
+<div class="nav-bar">
+    <div class="nav-bar-wrap">
+        <a href="index.html"><i class="fas fa-arrow-left"></i></a>
+        <span>Восстановление пароля</span>
+        <a href="login.html"><i class="fas fa-sign-in-alt"></i></a>
+    </div>
+</div>
+
+<div class="page-content b-center">
+    <div class="form">
+        <p class="page-description">
+            Укажите ваш номер телефона, который вы использовали при регистрации и мы вышлем вам новый пароль в бесплатном смс, который вы потом можете изменить в личном кабинете
+        </p>
+        <form id="reg-form" action="" method="post" onsubmit="return false;">
+            <div class="form-row">
+                <div class="form-row-item">
+                    <label>Номер телефона</label>
+                    <input class="phone-mask" placeholder="+7 (***) ***-**-**" autocomplete="off" name="phone" id="phone" type="tel" maxlength="18">
+                    <div class="errorMessage" id="User_phone_em_" style="display:none"></div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-row-item">
+                    <button onclick="remind();" id="remind-btn">Отправить новый пароль</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.mask.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+    app.initialize();
+</script>
+<script type="text/javascript" src="js/remind.js"></script>
+</body>
+</html></title>
+</head>
+<body>
+
+</body>
+</html>

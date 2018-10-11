@@ -202,3 +202,11 @@ body.bar {
     background-color: #b7b7b7;
     border-color: #b7b7b7;
 }
+#remind-btn {
+    margin: 0 auto;
+    width: 270px;
+}
+.page-description {
+    font-size: 15px;
+    margin-bottom: 15px;
+}

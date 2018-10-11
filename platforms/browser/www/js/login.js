@@ -22,7 +22,6 @@ function login() {
     }
 
     if(error == false) {
-        alert($('#password').val());
         $.ajax({
             type: "POST",
             url: "https://xn----dtbckhdelflyecx2bh6dk.xn--p1ai/mapi/registration/login",
