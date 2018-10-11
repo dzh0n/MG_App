@@ -63,7 +63,12 @@ function registration() {
             data: "name="+$('#name').val()+"&phone="+$('#phone').val()+'&email='+$('#email').val()+"&password="+$('#password').val(),
             success: function(msg){
                 if(msg=='success') {
-
+                    navigator.notification.alert(
+                        'Благодарим вас за регистрацию, теперь вы можете войти в свой аккаунт.',  // message
+                        function(){window.location = 'login.html'},         // callback
+                        'Регистрация завершена',            // title
+                        'Войти'                  // buttonName
+                    );
                 }
                 else {
                     navigator.notification.alert(

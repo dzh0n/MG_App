@@ -31,6 +31,7 @@ function login() {
                 if($.isNumeric(msg)) {
                     var storage = window.localStorage;
                     storage.setItem('userId', msg);
+                    window.location = 'index.html';
                 }
                 else {
                     navigator.notification.alert(

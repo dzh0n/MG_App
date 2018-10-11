@@ -13,8 +13,8 @@
 <div class="nav-bar">
     <div class="nav-bar-wrap">
         <a href="index.html"><i class="fas fa-arrow-left"></i></a>
-        <span>Авторизация</span>
-        <a href="javascript:;" onclick="login();"><i class="fas fa-sign-in-alt"></i></a>
+        <span>Вход</span>
+        <a href="javascript:;">&nbsp;&nbsp;</a>
     </div>
 </div>
 
@@ -38,6 +38,16 @@
             <div class="form-row">
                 <div class="form-row-item text-center">
                     <a href="remind.html" class="remind-link">Забыли свой пароль?</a>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-row-item">
+                    <button onclick="login();" id="login-btn">Войти</button>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-row-item">
+                    <button onclick="window.location='registration.html';" id="reglink-btn">Зарегистрироваться</button>
                 </div>
             </div>
         </form>
