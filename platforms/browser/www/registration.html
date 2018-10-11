@@ -6,11 +6,75 @@
     <title>Регистрация</title>
     <link rel="stylesheet" type="text/css" href="css/global.css" />
     <link href="css/fonts/roboto/stylesheet.css" rel="stylesheet">
+    <link href="css/fonts/fontawesome/css/all.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="bar">
 
 <div class="nav-bar">
+    <div class="nav-bar-wrap">
+        <a href=""><i class="fas fa-arrow-left"></i></a>
+        <span>Регистрация</span>
+        <a href=""><i class="fas fa-check"></i></a>
+    </div>
+</div>
 
+<div class="page-content">
+    <div class="form">
+        <form id="reg-form" action="/user/registration" method="post">
+            <div class="form-row">
+                <div class="form-row-item">
+                    <label>ФИО или Наименование организации</label>
+                    <input autocomplete="off" name="name" id="name" type="text" maxlength="50">
+                    <div class="errorMessage" id="User_name_em_" style="display:none"></div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-row-item">
+                    <label>Номер телефона</label>
+                    <input class="phone-mask" placeholder="+7 (***) ***-**-**" autocomplete="off" name="phone" id="phone" type="text" maxlength="18">
+                    <div class="errorMessage" id="User_phone_em_" style="display:none"></div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-row-item">
+                    <label>Email</label>
+                    <input autocomplete="off" name="email" id="email" type="text" maxlength="50">
+                    <div class="errorMessage" id="User_email_em_" style="display:none"></div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-row-item half">
+                    <label>Пароль</label>
+                    <input name="User[password]" id="User_password" type="password" maxlength="255">                <div class="errorMessage" id="User_password_em_" style="display:none"></div>            </div>
+                <div class="form-row-item half">
+                    <label>Повтор пароля</label>
+                    <input name="User[repeatPassword]" id="User_repeatPassword" type="password">                <div class="errorMessage" id="User_repeatPassword_em_" style="display:none"></div>            </div>
+            </div>
+            <div class="form-row">
+                <div class="form-row-item half">
+                    <label>Код подтверждения из SMS</label>
+                    <input name="User[sms_code]" id="User_sms_code" type="hidden" value="1892">                <input autocomplete="off" name="User[sms_code_in]" id="User_sms_code_in" type="text">                <div class="errorMessage" id="User_sms_code_in_em_" style="display:none"></div>            </div>
+                <div class="form-row-item half">
+                    <label>&nbsp;</label>
+                    <a class="ajax_sms" href="#" id="yt0">Получить код</a>            </div>
+            </div>
+            <div class="form-row" style="margin-bottom: 5px;">
+                <div class="form-row-item">
+                    <label class="checkbox">
+                        <input id="ytUser_check" type="hidden" value="0" name="User[check]"><input name="User[check]" id="User_check" value="1" checked="checked" type="checkbox">                    <div class="checkbox__text">Регистрируясь на сайте, я принимаю все условия договора-оферты по использованию сервиса</div>
+                    </label>
+                    <div class="errorMessage" id="User_check_em_" style="display:none"></div>            </div>
+            </div>
+            <div class="form-row">
+                <div class="form-row-item">
+                    <label class="checkbox">
+                        <input id="ytUser_personal_data" type="hidden" value="0" name="User[personal_data]"><input name="User[personal_data]" id="User_personal_data" value="1" checked="checked" type="checkbox">                    <div class="checkbox__text">Регистрируясь на сайте, я соглашаюсь на обработку моих персональных данных</div>
+                    </label>
+                    <div class="errorMessage" id="User_personal_data_em_" style="display:none"></div>            </div>
+            </div>
+
+        </form>
+    </div>
 </div>
 
 <script type="text/javascript" src="cordova.js"></script>
