@@ -30,6 +30,9 @@ body.bar {
     padding-top: 50px;
     box-sizing: border-box;
 }
+.text-center {
+    text-align: center;
+}
 .nav-bar {
     background-color: #ffdd0a;
     height: 55px;
@@ -60,6 +63,15 @@ body.bar {
 .page-content {
     background-color: #FFFFFF;
     padding: 25px;
+}
+.page-content.b-center {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+}
+.page-content.b-center .form {
+    width: 100%;
 }
 
 .form-row {
@@ -153,4 +165,9 @@ body.bar {
 }
 .errorMessage {
     color: red;
+}
+.remind-link {
+    color: #000;
+    font-size: 15px;
+    display: inline-block;
 }
