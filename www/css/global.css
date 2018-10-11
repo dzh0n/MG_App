@@ -58,7 +58,6 @@ body.bar {
 .page-content {
     background-color: #FFFFFF;
     padding: 25px;
-    margin-bottom: 20px;
 }
 
 .form-row {
@@ -89,6 +88,9 @@ body.bar {
     border-radius: 5px;
     width: 100%;
     max-width: 680px;
+}
+.form-row input[type="checkbox"] {
+    width: auto;
 }
 .ajax_sms {
     color: #000;

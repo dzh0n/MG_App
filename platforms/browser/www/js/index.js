@@ -60,22 +60,6 @@ document.addEventListener("deviceready", function(){
 });
 
 $(document).ready(function () {
-    var playStatus = false;
 
-    $('#carteSoudCtrl')[0].play();
-    playStatus = true;
-
-    $('.gif img').on('click', function () {
-        if(playStatus) {
-            $('#carteSoudCtrl')[0].pause();
-            playStatus = false;
-        }
-        else {
-            $('#carteSoudCtrl')[0].play();
-            playStatus = true;
-        }
-
-        return false;
-    });
 });
 
