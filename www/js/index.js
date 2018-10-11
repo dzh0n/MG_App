@@ -62,6 +62,15 @@ document.addEventListener("deviceready", function(){
 });
 
 $(document).ready(function () {
-
+    PullToRefresh.init({
+        mainElement: 'body',
+        onRefresh: function(){
+            // What do you want to do when the user does the pull-to-refresh gesture
+        },
+        distThreshold : 50, // Minimum distance required to trigger the refresh.
+        iconArrow: '<span class="fa fa-arrow-down"></span>', // The icon for both instructionsPullToRefresh and instructionsReleaseToRefresh
+        instructionsPullToRefresh: "",
+        instructionsReleaseToRefresh: ""
+    });
 });
 
