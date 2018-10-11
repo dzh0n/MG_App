@@ -18,13 +18,18 @@
     <icon src="www/icon.png" />
     <platform name="android">
         <icon src="www/icon.png" density="ldpi" />
-        <preference name="SplashScreen" value="res/screen/splash.png" /> <!-- defaults to "/img/logo.png" -->
-        <preference name="AutoHideSplashScreen" value="true" /> <!-- defaults to "true" -->
-        <preference name="SplashScreenDelay" value="3000" /> <!-- defaults to "3000" -->
-        <preference name="SplashScreenBackgroundColor" value="#ffdd0a" /> <!-- defaults to "#464646" -->
-        <preference name="ShowSplashScreen" value="true" /> <!-- defaults to "true" -->
-        <preference name="SplashScreenWidth" value="300" /> <!-- defaults to "170" -->
-        <preference name="SplashScreenHeight" value="100" /> <!-- defaults to "200" -->
+        <splash density="land-ldpi" src="res/screen/android/drawable-land-ldpi-screen.png" />
+        <splash density="land-mdpi" src="res/screen/android/drawable-land-mdpi-screen.png" />
+        <splash density="land-hdpi" src="res/screen/android/drawable-land-hdpi-screen.png" />
+        <splash density="land-xhdpi" src="res/screen/android/drawable-land-xhdpi-screen.png" />
+        <splash density="land-xxhdpi" src="res/screen/android/drawable-land-xxhdpi-screen.png" />
+        <splash density="land-xxxhdpi" src="res/screen/android/drawable-land-xxxhdpi-screen.png" />
+        <splash density="port-ldpi" src="res/screen/android/drawable-port-ldpi-screen.png" />
+        <splash density="port-mdpi" src="res/screen/android/drawable-port-mdpi-screen.png" />
+        <splash density="port-hdpi" src="res/screen/android/drawable-port-hdpi-screen.png" />
+        <splash density="port-xhdpi" src="res/screen/android/drawable-port-xhdpi-screen.png" />
+        <splash density="port-xxhdpi" src="res/screen/android/drawable-port-xxhdpi-screen.png" />
+        <splash density="port-xxxhdpi" src="res/screen/android/drawable-port-xxxhdpi-screen.png" />
     </platform>
 
     <plugin name="cordova-plugin-network-information" source="npm" spec="~1.2.0" />
