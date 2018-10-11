@@ -28,7 +28,13 @@ function sendSms() {
         });
     }
     else {
-        alert('Укажите сначала свой номер телефона');
+        navigator.notification.alert(
+            'Укажите сначала свой номер телефона',  // message
+            function(){},         // callback
+            'Код подтверждения из SMS',            // title
+            'Ok'                  // buttonName
+        );
+        alert('');
     }
 }
 
