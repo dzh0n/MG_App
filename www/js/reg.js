@@ -20,7 +20,7 @@ function sendSms() {
     if($('#phone').val() != '') {
         $.ajax({
             type: "POST",
-            url: "https://мужичок-грузовичок.рф/mapi/registration/sms",
+            url: "https://xn----dtbckhdelflyecx2bh6dk.xn--p1ai/mapi/registration/sms",
             data: "phone="+$('#phone').val()+'&code='+$('#sms_code').val(),
             success: function(msg){
                 alert( "Прибыли данные: " + msg );
