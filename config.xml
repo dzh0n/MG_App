@@ -2,10 +2,10 @@
 <widget id="ru.mg.app" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Мужичок-грузовичок</name>
     <description>
-        A blank PhoneGap app.
+
     </description>
     <author email="support@phonegap.com" href="https://xn----dtbckhdelflyecx2bh6dk.xn--p1ai/">
-        PhoneGap Team
+        Мужичок-грузовичок
     </author>
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
