@@ -88,7 +88,7 @@ function sendSms() {
                 navigator.notification.alert(
                     'Код подтверждения отправлен на ваш номер телефона',  // message
                     function(){},         // callback
-                    'Код подтверждения',            // title
+                    '',//'Код подтверждения',            // title
                     'Ok'                  // buttonName
                 );
             }
