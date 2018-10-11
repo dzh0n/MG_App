@@ -25,3 +25,8 @@ body {
     background-color: #f7f7f7;
     color: #2c2928;
 }
+
+.nav-bar {
+    background-color: #ffdd0a;
+    height: 40px;
+}
