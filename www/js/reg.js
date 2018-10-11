@@ -60,7 +60,7 @@ function registration() {
         $.ajax({
             type: "POST",
             url: "https://xn----dtbckhdelflyecx2bh6dk.xn--p1ai/mapi/registration/add",
-            data: "name="+$('#name').val()+"&phone="+$('#phone').val()+'&email='+$('#email').val()+"&password="+$('#email').val(),
+            data: "name="+$('#name').val()+"&phone="+$('#phone').val()+'&email='+$('#email').val()+"&password="+$('#password').val(),
             success: function(msg){
                 if(msg=='success') {
 
