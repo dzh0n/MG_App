@@ -38,7 +38,7 @@
             <div class="form-row">
                 <div class="form-row-item">
                     <label>Email</label>
-                    <input autocomplete="off" name="email" id="email" type="text" maxlength="50">
+                    <input autocomplete="off" name="email" id="email" type="email" maxlength="50">
                     <div class="errorMessage" id="User_email_em_" style="display:none"></div>
                 </div>
             </div>
@@ -52,10 +52,13 @@
             <div class="form-row">
                 <div class="form-row-item half">
                     <label>Код подтверждения из SMS</label>
-                    <input name="User[sms_code]" id="User_sms_code" type="hidden" value="1892">                <input autocomplete="off" name="User[sms_code_in]" id="User_sms_code_in" type="text">                <div class="errorMessage" id="User_sms_code_in_em_" style="display:none"></div>            </div>
+                    <input name="sms_code" id="sms_code" type="hidden" value="">
+                    <input autocomplete="off" name="sms_code_in" id="sms_code_in" type="text">
+                    <div class="errorMessage" id="User_sms_code_in_em_" style="display:none"></div>
+                </div>
                 <div class="form-row-item half">
-
-                    <a class="ajax_sms" href="#" id="yt0">Получить код</a>            </div>
+                    <a class="ajax_sms" href="#" id="yt0">Получить код</a>
+                </div>
             </div>
             <div class="form-row" style="margin-bottom: 5px;">
                 <div class="form-row-item">
