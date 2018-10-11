@@ -18,6 +18,13 @@
     <icon src="www/icon.png" />
     <platform name="android">
         <icon src="www/icon.png" density="ldpi" />
+        <preference name="SplashScreen" value="/res/screen/splash.png" /> <!-- defaults to "/img/logo.png" -->
+        <preference name="AutoHideSplashScreen" value="true" /> <!-- defaults to "true" -->
+        <preference name="SplashScreenDelay" value="3000" /> <!-- defaults to "3000" -->
+        <preference name="SplashScreenBackgroundColor" value="#ffdd0a" /> <!-- defaults to "#464646" -->
+        <preference name="ShowSplashScreen" value="false" /> <!-- defaults to "true" -->
+        <preference name="SplashScreenWidth" value="300" /> <!-- defaults to "170" -->
+        <preference name="SplashScreenHeight" value="100" /> <!-- defaults to "200" -->
     </platform>
 
     <plugin name="cordova-plugin-network-information" source="npm" spec="~1.2.0" />
@@ -30,15 +37,6 @@
     <plugin name="cordova-plugin-splashscreen" spec="~5.0.2" />
     <plugin spec="https://github.com/katzer/cordova-plugin-local-notifications.git#53262c8" />
 
-    <platform name="browser">
-        <preference name="SplashScreen" value="/res/screen/splash.png" /> <!-- defaults to "/img/logo.png" -->
-        <preference name="AutoHideSplashScreen" value="true" /> <!-- defaults to "true" -->
-        <preference name="SplashScreenDelay" value="3000" /> <!-- defaults to "3000" -->
-        <preference name="SplashScreenBackgroundColor" value="#ffdd0a" /> <!-- defaults to "#464646" -->
-        <preference name="ShowSplashScreen" value="false" /> <!-- defaults to "true" -->
-        <preference name="SplashScreenWidth" value="300" /> <!-- defaults to "170" -->
-        <preference name="SplashScreenHeight" value="100" /> <!-- defaults to "200" -->
-    </platform>
 
     <access origin="*" />
     <allow-intent href="https://*/*" />
