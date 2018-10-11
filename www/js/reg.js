@@ -34,7 +34,6 @@ function sendSms() {
             'Код подтверждения из SMS',            // title
             'Ok'                  // buttonName
         );
-        alert('');
     }
 }
 
