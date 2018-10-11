@@ -31,7 +31,7 @@
             <div class="form-row">
                 <div class="form-row-item">
                     <label>Номер телефона</label>
-                    <input class="phone-mask" placeholder="+7 (***) ***-**-**" autocomplete="off" name="phone" id="phone" type="text" maxlength="18">
+                    <input class="phone-mask" placeholder="+7 (***) ***-**-**" autocomplete="off" name="phone" id="phone" type="phone" maxlength="18">
                     <div class="errorMessage" id="User_phone_em_" style="display:none"></div>
                 </div>
             </div>
@@ -43,19 +43,18 @@
                 </div>
             </div>
             <div class="form-row">
-                <div class="form-row-item half">
+                <div class="form-row-item">
                     <label>Пароль</label>
-                    <input name="User[password]" id="User_password" type="password" maxlength="255">                <div class="errorMessage" id="User_password_em_" style="display:none"></div>            </div>
-                <div class="form-row-item half">
-                    <label>Повтор пароля</label>
-                    <input name="User[repeatPassword]" id="User_repeatPassword" type="password">                <div class="errorMessage" id="User_repeatPassword_em_" style="display:none"></div>            </div>
+                    <input name="password" id="password" type="password" maxlength="255">
+                    <div class="errorMessage" id="User_password_em_" style="display:none"></div>
+                </div>
             </div>
             <div class="form-row">
                 <div class="form-row-item half">
                     <label>Код подтверждения из SMS</label>
                     <input name="User[sms_code]" id="User_sms_code" type="hidden" value="1892">                <input autocomplete="off" name="User[sms_code_in]" id="User_sms_code_in" type="text">                <div class="errorMessage" id="User_sms_code_in_em_" style="display:none"></div>            </div>
                 <div class="form-row-item half">
-                    <label>&nbsp;</label>
+
                     <a class="ajax_sms" href="#" id="yt0">Получить код</a>            </div>
             </div>
             <div class="form-row" style="margin-bottom: 5px;">
