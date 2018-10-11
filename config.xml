@@ -22,7 +22,7 @@
         <preference name="AutoHideSplashScreen" value="true" /> <!-- defaults to "true" -->
         <preference name="SplashScreenDelay" value="3000" /> <!-- defaults to "3000" -->
         <preference name="SplashScreenBackgroundColor" value="#ffdd0a" /> <!-- defaults to "#464646" -->
-        <preference name="ShowSplashScreen" value="false" /> <!-- defaults to "true" -->
+        <preference name="ShowSplashScreen" value="true" /> <!-- defaults to "true" -->
         <preference name="SplashScreenWidth" value="300" /> <!-- defaults to "170" -->
         <preference name="SplashScreenHeight" value="100" /> <!-- defaults to "200" -->
     </platform>
