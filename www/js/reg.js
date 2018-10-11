@@ -85,7 +85,12 @@ function sendSms() {
             url: "https://xn----dtbckhdelflyecx2bh6dk.xn--p1ai/mapi/registration/sms",
             data: "phone="+$('#phone').val()+'&code='+$('#sms_code').val(),
             success: function(msg){
-
+                navigator.notification.alert(
+                    'Код подтверждения отправлен на ваш номер телефона',  // message
+                    function(){},         // callback
+                    'Код подтверждения',            // title
+                    'Ok'                  // buttonName
+                );
             }
         });
     }
