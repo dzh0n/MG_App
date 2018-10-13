@@ -64,6 +64,7 @@ function saveSettings() {
     if(error == false) {
         $.ajax({
             type: "POST",
+            beforeSend: function(){SpinnerDialog.show();},
             url: "https://xn----dtbckhdelflyecx2bh6dk.xn--p1ai/mapi/user/savesetting",
             data: "id="+userId+"&name="+$('#name').val()+"&phone="+$('#phone').val()+'&email='+$('#email').val()+"&newPassword="+$('#newPassword').val()+"&repeatPassword="+$('#repeatPassword').val(),
             success: function(msg){
