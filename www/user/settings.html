@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Регистрация</title>
+    <link rel="stylesheet" type="text/css" href="css/global.css" />
+    <link href="css/fonts/roboto/stylesheet.css" rel="stylesheet">
+    <link href="css/fonts/fontawesome/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bar">
+
+<div class="nav-bar">
+    <div class="nav-bar-wrap">
+        <a href="index.html"><i class="fas fa-arrow-left"></i></a>
+        <span>Регистрация</span>
+        <a href="javascript:;" onclick="registration();"><i class="fas fa-check"></i></a>
+    </div>
+</div>
+
+<div class="page-content">
+    <div class="form">
+        <form id="reg-form" action="" method="post" onsubmit="return false;">
+            <div class="form-row">
+                <div class="form-row-item">
+                    <label>ФИО или Наименование организации</label>
+                    <input autocomplete="off" name="name" id="name" type="text" maxlength="50">
+                    <div class="errorMessage" id="User_name_em_" style="display:none"></div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-row-item">
+                    <label>Номер телефона</label>
+                    <input class="phone-mask" placeholder="+7 (***) ***-**-**" autocomplete="off" name="phone" id="phone" type="tel" maxlength="18">
+                    <div class="errorMessage" id="User_phone_em_" style="display:none"></div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-row-item">
+                    <label>Email</label>
+                    <input autocomplete="off" name="email" id="email" type="email" maxlength="50">
+                    <div class="errorMessage" id="User_email_em_" style="display:none"></div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-row-item">
+                    <label>Пароль</label>
+                    <input name="password" id="password" type="password" maxlength="255">
+                    <div class="errorMessage" id="User_password_em_" style="display:none"></div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-row-item half">
+                    <label>Код подтверждения из SMS</label>
+                    <input name="sms_code" id="sms_code" type="hidden" value="">
+                    <input autocomplete="off" name="sms_code_in" id="sms_code_in" type="number">
+                    <div class="errorMessage" id="User_sms_code_in_em_" style="display:none"></div>
+                </div>
+                <div class="form-row-item half">
+                    <a class="ajax_sms" href="#" id="yt0">Получить код</a>
+                </div>
+            </div>
+            <div class="form-row" style="margin-bottom: 5px;">
+                <div class="form-row-item">
+                    <label class="checkbox">
+                        <input name="User[check]" id="User_check" value="1" checked="checked" type="checkbox" disabled>
+                        <div class="checkbox__text">Регистрируясь, я принимаю все условия договора-оферты по использованию сервиса</div>
+                    </label>
+                    <div class="errorMessage" id="User_check_em_" style="display:none"></div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-row-item">
+                    <label class="checkbox">
+                        <input name="User[personal_data]" id="User_personal_data" value="1" checked="checked" type="checkbox" disabled>
+                        <div class="checkbox__text">Регистрируясь, я соглашаюсь на обработку моих персональных данных</div>
+                    </label>
+                    <div class="errorMessage" id="User_personal_data_em_" style="display:none"></div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.mask.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+    app.initialize();
+</script>
+<script type="text/javascript" src="js/reg.js"></script>
+</body>
+</html>

@@ -77,7 +77,7 @@ $(document).ready(function () {
 
 function openNav() {
     //document.getElementById("mySidenav").style.width = "250px";
-    $('#mySidenav').css('width','250px');
+    $('#mySidenav').css('width','80%');
     // document.getElementById("main").style.marginLeft = "250px";
     //document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
     $('body').css('backgroundColor','rgba(0,0,0,0.4)');

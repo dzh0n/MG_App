@@ -28,6 +28,10 @@
 
     <preference name="ShowSplashScreenSpinner" value="false"/>
 
+    <platform name="browser">
+        <preference name="ShowSplashScreen" value="false" />
+    </platform>
+
 
 
     <icon src="www/icon.png" />
