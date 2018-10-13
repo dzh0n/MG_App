@@ -5,25 +5,28 @@
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
         <title>Мужичок-грузовичок</title>
         <link rel="stylesheet" type="text/css" href="css/global.css" />
-        <link rel="stylesheet" type="text/css" href="css/main.css" />
         <link href="css/fonts/roboto/stylesheet.css" rel="stylesheet">
+        <link href="css/fonts/fontawesome/css/all.min.css" rel="stylesheet">
     </head>
-    <body>
+    <body class="bar">
 
-    <div class="main-page">
-        <div class="main-header">
-            <img src="img/main-logo-n.png">
-            <div class="header-login">
-                <ul class="header-login-menu">
-                    <li><a href="login.html">Вход</a></li>
-                    <li>|</li>
-                    <li><a href="registration.html">Регистрация</a></li>
-                </ul>
-            </div>
-            <div class="header-contacts-phone"><a href="tel:88002347102">8 800 2-347-102</a></div>
-        </div>
-
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
     </div>
+
+    <div class="nav-bar">
+        <div class="nav-bar-wrap">
+            <a href="javascript:;" onclick="openNav()"><i class="fas fa-bars"></i></i></a>
+            <span>Мужичок-грузовичок</span>
+            <a href="login.html"><i class="fas fa-sign-in-alt"></i></a>
+        </div>
+    </div>
+
+
 
 
     <script type="text/javascript" src="cordova.js"></script>
