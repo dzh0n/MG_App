@@ -77,16 +77,29 @@ $(document).ready(function () {
 
 function openNav() {
     //document.getElementById("mySidenav").style.width = "250px";
-    $('#mySidenav').css('width','80%');
+    $('#mySidenav').css('left','0');
     // document.getElementById("main").style.marginLeft = "250px";
     //document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
     $('body').css('backgroundColor','rgba(0,0,0,0.4)');
+
+    cordova.plugins.notification.local.schedule({
+        id: 1022,
+        title: 'КОНКУРС #1021 НА ПЕРЕВОЗКУ ГРУЗОВ',
+        text: 'Перевозка извести. Стерлитамак - Салават. 3000 кг. 3 500 руб./рейс',
+        data: { meetingId:"#123FG8" }
+    });
 }
 
 function closeNav() {
-    $('#mySidenav').css('width','0');
+    $('#mySidenav').css('left','-100%');
     //document.getElementById("mySidenav").style.width = "0";
     //document.getElementById("main").style.marginLeft= "0";
     //document.body.style.backgroundColor = "white";
     $('body').css('backgroundColor','rgba(255,255,255,1)');
+}
+
+function logout() {
+    var storage = window.localStorage;
+    storage.removeItem('userId');
+    window.location = 'index.html';
 }

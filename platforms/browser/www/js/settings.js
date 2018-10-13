@@ -64,11 +64,12 @@ function saveSettings() {
     if(error == false) {
         $.ajax({
             type: "POST",
-            beforeSend: function(){SpinnerDialog.show();},
+            beforeSend: function(){/*SpinnerDialog.show();*/},
             url: "https://xn----dtbckhdelflyecx2bh6dk.xn--p1ai/mapi/user/savesetting",
             data: "id="+userId+"&name="+$('#name').val()+"&phone="+$('#phone').val()+'&email='+$('#email').val()+"&newPassword="+$('#newPassword').val()+"&repeatPassword="+$('#repeatPassword').val(),
             success: function(msg){
                 if(msg=='success') {
+                   // SpinnerDialog.hide();
                     navigator.notification.alert(
                         'Все ваши данные были успешно сохранены.',  // message
                         function(){$('#newPassword').val('');$('#repeatPassword').val('');},         // callback

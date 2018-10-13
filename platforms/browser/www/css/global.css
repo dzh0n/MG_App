@@ -216,11 +216,11 @@ body.bar {
 
 .sidenav {
     height: 100%;
-    width: 0;
+    width: 100%;
     position: fixed;
     z-index: 1;
     top: 0;
-    left: 0;
+    left: -100%;
     background-color: #fff;
     overflow-x: hidden;
     transition: 0.5s;
@@ -228,16 +228,36 @@ body.bar {
 }
 
 .sidenav a {
-    padding: 8px 8px 8px 32px;
+    padding: 8px 8px 8px 20px;
     text-decoration: none;
     font-size: 25px;
     color: #818181;
     display: block;
     transition: 0.3s;
 }
+.sidenav ul li {
+    margin-bottom: 10px;
+}
+
+.sidenav ul li a {
+    color: inherit;
+    font-size: 18px;
+    font-weight: 500;
+}
+.sidenav ul li a i {
+    margin-right: 10px;
+    width: 25px;
+}
 
 .sidenav a:hover {
     color: #f1f1f1;
+}
+.sidenav ul li:nth-child(1) {
+    border-bottom: #ececec 1px solid;
+    margin-bottom: 20px;
+}
+.sidenav ul li:nth-child(1) a {
+    font-size: 22px;
 }
 
 .sidenav .closebtn {
