@@ -17,6 +17,8 @@ $(document).ready(function(){
             }
         });
     }
+    else
+        window.location = 'login.html';
 });
 
 function saveSettings() {
