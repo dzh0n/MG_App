@@ -62,6 +62,12 @@ document.addEventListener("deviceready", function(){
 });
 
 $(document).ready(function () {
+    cordova.plugins.notification.local.schedule({
+        id: 1022,
+        title: 'КОНКУРС #1021 НА ПЕРЕВОЗКУ ГРУЗОВ',
+        text: 'Перевозка извести. Стерлитамак - Салават. 3000 кг. 3 500 руб./рейс',
+        data: { meetingId:"#123FG8" }
+    });
    /* PullToRefresh.init({
         mainElement: 'body',
         onRefresh: function(){
@@ -82,12 +88,7 @@ function openNav() {
     //document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
     $('body').css('backgroundColor','rgba(0,0,0,0.4)');
 
-    cordova.plugins.notification.local.schedule({
-        id: 1022,
-        title: 'КОНКУРС #1021 НА ПЕРЕВОЗКУ ГРУЗОВ',
-        text: 'Перевозка извести. Стерлитамак - Салават. 3000 кг. 3 500 руб./рейс',
-        data: { meetingId:"#123FG8" }
-    });
+
 }
 
 function closeNav() {
