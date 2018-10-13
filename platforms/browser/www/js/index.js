@@ -59,15 +59,16 @@ document.addEventListener("deviceready", function(){
     if (cordova.platformId == 'android') {
         StatusBar.backgroundColorByHexString("#ffdd0a");
     }
-});
-
-$(document).ready(function () {
     cordova.plugins.notification.local.schedule({
         id: 1022,
-        title: 'КОНКУРС #1021 НА ПЕРЕВОЗКУ ГРУЗОВ',
+        title: 'Новый заказ',
         text: 'Перевозка извести. Стерлитамак - Салават. 3000 кг. 3 500 руб./рейс',
         data: { meetingId:"#123FG8" }
     });
+});
+
+$(document).ready(function () {
+
    /* PullToRefresh.init({
         mainElement: 'body',
         onRefresh: function(){
