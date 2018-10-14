@@ -59,11 +59,6 @@ document.addEventListener("deviceready", function(){
     if (cordova.platformId == 'android') {
         StatusBar.backgroundColorByHexString("#ffdd0a");
 
-        cordova.plugins.notification.local.setDefaults({
-           // led: { color: '#FFFFFF', on: 500, off: 500 },
-            vibrate: true
-        });
-
         setInterval(function() {
             getPush();
         }, 1000*60);
@@ -138,7 +133,8 @@ function getPush() {
                         id: result.order_id,
                         title: title,
                         text: result.message,
-                        data: { type:result.type_push }
+                        data: { type:result.message },
+                        vibrate: true
                     });
                 }
             }
