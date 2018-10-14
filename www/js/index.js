@@ -65,12 +65,11 @@ document.addEventListener("deviceready", function(){
 
         cordova.plugins.notification.local.on("click", function (notification) {
             alert(notification.id);
-            alert(notification.data.meetingId);
-            var inData = JSON.parse(notification.data);
-            alert(inData.meetingId);
-            /*if(parseInt(inData.typePush) < 2) {
+            alert(notification.data.typePush);
+
+            if(parseInt(notification.data.typePush) < 2) {
                 window.location = 'order.html#'+notification.id;
-            }*/
+            }
         });
 
     }
@@ -135,7 +134,7 @@ function getPush() {
                         id: result.order_id,
                         title: title,
                         text: result.message,
-                        data: { meetingId:"#123FG8" },
+                        data: { typePush:result.type_push },
                         vibrate: true,
                         lockscreen: true,
                         led: "#FF0000",
