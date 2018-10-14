@@ -133,7 +133,7 @@ function getPush() {
                         id: result.order_id,
                         title: title,
                         text: result.message,
-                        data: { typePush: "_"+result.type_push },
+                        data: { "typePush" : "_"+result.type_push },
                         vibrate: true,
                         lockscreen: true,
                         led: "#FF0000",
