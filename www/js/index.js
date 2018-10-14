@@ -65,6 +65,7 @@ document.addEventListener("deviceready", function(){
 
         cordova.plugins.notification.local.on("click", function (notification) {
             var inData = JSON.parse(notification.data);
+            alert(inData.typePush);
             if(parseInt(inData.typePush) < 2) {
                 window.location = 'order.html#'+inData.order_id;
             }
