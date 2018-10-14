@@ -125,7 +125,18 @@ body.bar {
     cursor: pointer;
     outline: none;
 }
-
+.form-row select {
+    outline: none;
+    font-family: inherit;
+    font-size: 16px;
+    box-sizing: border-box;
+    padding: 12px 15px;
+    min-width: 200px;
+    border: #000000 2px solid;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    width: 100%;
+}
 .ajax_sms {
     color: #000;
     font-size: 15px;
@@ -144,7 +155,8 @@ body.bar {
     padding: 0 0 0 30px;
     cursor: pointer;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 16px;
+    line-height: 1;
 }
 .checkbox__text:before {
     content: '';
@@ -163,12 +175,13 @@ body.bar {
     font-family: "Font Awesome 5 Free";
     content: "\f00c";
     font-weight: 900;
-    top: -2px;
+    top: -1px;
     left: 5px;
     width: 18px;
     height: 18px;
     color: #FFFFFF;
     transition: .2s;
+    font-size: 14px;
 }
 .checkbox input:checked + .checkbox__text:before {
     background: #000;
