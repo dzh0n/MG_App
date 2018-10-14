@@ -64,9 +64,9 @@ document.addEventListener("deviceready", function(){
         }, 1000*60);
 
         cordova.plugins.notification.local.on("click", function (notification) {
-            alert(notification.data.order_id);
-            if(notification.data.type_push < 2) {
-                window.location = 'order.html#'+notification.data.order_id;
+            alert(notification.id);
+            if(notification.data.type < 2) {
+                window.location = 'order.html#'+notification.id;
             }
         });
 
@@ -132,7 +132,7 @@ function getPush() {
                         id: data.order_id,
                         title: title,
                         text: data.message,
-                        data: { order_id:data.order_id, type_push:data.type_push}
+                        data: { type:data.type_push }
                     });
                 }
             }
