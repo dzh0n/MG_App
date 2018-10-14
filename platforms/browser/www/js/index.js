@@ -59,12 +59,18 @@ document.addEventListener("deviceready", function(){
     if (cordova.platformId == 'android') {
         StatusBar.backgroundColorByHexString("#ffdd0a");
 
+        cordova.plugins.notification.local.setDefaults({
+            led: { color: '#FFFFFF', on: 500, off: 500 },
+            vibrate: true
+        });
+
         setInterval(function() {
             getPush();
         }, 1000*60);
 
         cordova.plugins.notification.local.on("click", function (notification) {
             alert(notification.id);
+            alert(notification.data.type);
             if(notification.data.type < 2) {
                 window.location = 'order.html#'+notification.id;
             }
@@ -122,17 +128,17 @@ function getPush() {
             url: "https://xn----dtbckhdelflyecx2bh6dk.xn--p1ai/mapi/push/",
             data: "uid="+userId,
             dataType: 'json',
-            success: function(data){
-                if(data.order_id>0) {
-                    if(data.type_push == 0)
+            success: function(result){
+                if(result.order_id>0) {
+                    if(result.type_push == 0)
                         title = 'Появился новый заказ';
-                    if(data.type_push == 1)
+                    if(result.type_push == 1)
                         title = 'Поступило новое предложение к вашему заказу';
                     cordova.plugins.notification.local.schedule({
-                        id: data.order_id,
+                        id: result.order_id,
                         title: title,
-                        text: data.message,
-                        data: { type:data.type_push }
+                        text: result.message,
+                        data: { type:result.type_push }
                     });
                 }
             }
