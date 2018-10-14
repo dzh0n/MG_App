@@ -315,7 +315,7 @@ a {
 }
 .order-list-item {
     background-color: #FFFFFF;
-    padding: 25px;
+    padding: 20px;
     margin-bottom: 20px;
     border: #fff 2px solid;
 }
@@ -386,7 +386,7 @@ a {
     text-decoration: none;
     color: #737373;
     font-size: 13px;
-    margin-right: 30px;
+    /*margin-right: 30px;*/
     outline: none;
 }
 .order-item-bottom a:hover {
@@ -618,6 +618,9 @@ a {
     text-decoration: none;
     color: #000000;
     font-size: 18px;
+}
+.green-label {
+    color: green;
 }
 
 .sidenav {

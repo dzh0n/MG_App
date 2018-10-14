@@ -58,13 +58,12 @@ var app = {
 document.addEventListener("deviceready", function(){
     if (cordova.platformId == 'android') {
         StatusBar.backgroundColorByHexString("#ffdd0a");
+
+        setInterval(function() {
+            getPush();
+        }, 1000*60);
     }
-    cordova.plugins.notification.local.schedule({
-        id: 1022,
-        title: 'Новый заказ',
-        text: 'Перевозка извести. Стерлитамак - Салават. 3000 кг. 3 500 руб./рейс',
-        data: { meetingId:"#123FG8" }
-    });
+
 });
 
 $(document).ready(function () {
@@ -104,4 +103,27 @@ function logout() {
     var storage = window.localStorage;
     storage.removeItem('userId');
     window.location = 'index.html';
+}
+
+function getPush() {
+    var storage = window.localStorage;
+    userId = storage.getItem('userId');
+    if(userId != '') {
+        $.ajax({
+            type: "POST",
+            url: "https://xn----dtbckhdelflyecx2bh6dk.xn--p1ai/mapi/push/",
+            data: "uid="+userId,
+            dataType: 'json',
+            success: function(data){
+                if(data.order_id>0) {
+                    cordova.plugins.notification.local.schedule({
+                        id: data.order_id,
+                        title: 'Новый заказ',
+                        text: data.message,
+                        data: { meetingId:data.order_id}
+                    });
+                }
+            }
+        });
+    }
 }
