@@ -133,7 +133,7 @@ function getPush() {
                         id: result.order_id,
                         title: title,
                         text: result.message,
-                        data: { type:result.message },
+                        data: { type: "#4444" },
                         vibrate: true,
                         lockscreen: true
                     });
