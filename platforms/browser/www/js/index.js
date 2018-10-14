@@ -61,7 +61,7 @@ document.addEventListener("deviceready", function(){
 
         setInterval(function() {
             getPush();
-        }, 1000*60);
+        }, 1000*30);
 
         cordova.plugins.notification.local.on("click", function (notification) {
             alert(notification.id);
@@ -134,7 +134,8 @@ function getPush() {
                         title: title,
                         text: result.message,
                         data: { type:result.message },
-                        vibrate: true
+                        vibrate: true,
+                        lockscreen: true
                     });
                 }
             }
