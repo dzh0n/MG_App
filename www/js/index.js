@@ -60,7 +60,7 @@ document.addEventListener("deviceready", function(){
         StatusBar.backgroundColorByHexString("#ffdd0a");
 
         cordova.plugins.notification.local.setDefaults({
-            led: { color: '#FFFFFF', on: 500, off: 500 },
+           // led: { color: '#FFFFFF', on: 500, off: 500 },
             vibrate: true
         });
 
