@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title>Мои предложения</title>
+    <title>Заказ №</title>
     <link rel="stylesheet" type="text/css" href="css/global.css" />
     <link href="css/fonts/roboto/stylesheet.css" rel="stylesheet">
     <link href="css/fonts/fontawesome/css/all.min.css" rel="stylesheet">
@@ -12,31 +12,25 @@
 
 <div class="nav-bar">
     <div class="nav-bar-wrap">
-        <a href="index.html"><i class="fas fa-arrow-left"></i></a>
-        <span>Мои предложения</span>
+        <a href="javascript:;" onclick="window.history.back();"><i class="fas fa-arrow-left"></i></a>
+        <span>Заказ №</span>
         <a href="javascript:;" onclick=""></a>
     </div>
 </div>
 
-<div class="page-info">
-    <p class="page-description">
-        В данном разделе отображены все заказы на грузоперевозки или спецтехнику, в которых вы размещали свои ценовые предложения
-    </p>
-</div>
+<div class="page-content" id="order-more">
 
-<div id="order-list">
 
 </div>
-
-
 
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.mask.min.js"></script>
+<script type="text/javascript" src="js/libs/jquery.barrating.min.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript">
     app.initialize();
 </script>
-<script type="text/javascript" src="js/offers.js"></script>
+<script type="text/javascript" src="js/order.js"></script>
 </body>
 </html>
