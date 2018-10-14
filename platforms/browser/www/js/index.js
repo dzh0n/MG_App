@@ -62,6 +62,13 @@ document.addEventListener("deviceready", function(){
         setInterval(function() {
             getPush();
         }, 1000*60);
+
+        cordova.plugins.notification.local.on("click", function (notification) {
+            if(notification.data.type_push < 2) {
+                window.location = 'order.html#'+notification.data.order_id;
+            }
+        });
+
     }
 
 });
@@ -116,11 +123,15 @@ function getPush() {
             dataType: 'json',
             success: function(data){
                 if(data.order_id>0) {
+                    if(data.type_push == 0)
+                        title = 'Появился новый заказ';
+                    if(data.type_push == 1)
+                        title = 'Поступило новое предложение к вашему заказу';
                     cordova.plugins.notification.local.schedule({
                         id: data.order_id,
-                        title: 'Новый заказ',
+                        title: title,
                         text: data.message,
-                        data: { meetingId:data.order_id}
+                        data: { order_id:data.order_id, type_push:data.type_push}
                     });
                 }
             }
