@@ -65,7 +65,7 @@ document.addEventListener("deviceready", function(){
 
         cordova.plugins.notification.local.on("click", function (notification) {
             alert(notification.id);
-            alert(notification.data.type);
+            alert(notification.data.meetingId);
             if(notification.data.type < 2) {
                 window.location = 'order.html#'+notification.id;
             }
@@ -133,7 +133,7 @@ function getPush() {
                         id: result.order_id,
                         title: title,
                         text: result.message,
-                        data: { type:result.message },
+                        data: { meetingId:"#123FG8" },
                         vibrate: true,
                         lockscreen: true
                     });
