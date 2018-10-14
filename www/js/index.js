@@ -92,6 +92,7 @@ $(document).ready(function () {
 
 
 function openNav() {
+    //
     //document.getElementById("mySidenav").style.width = "250px";
     $('#mySidenav').css('left','0');
     // document.getElementById("main").style.marginLeft = "250px";
