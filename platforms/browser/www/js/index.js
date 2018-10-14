@@ -61,12 +61,9 @@ document.addEventListener("deviceready", function(){
 
         setInterval(function() {
             getPush();
-        }, 1000*30);
+        }, 1000*60);
 
         cordova.plugins.notification.local.on("click", function (notification) {
-            alert(notification.id);
-            alert(notification.data.typePush);
-
             if(parseInt(notification.data.typePush) < 2) {
                 window.location = 'order.html#'+notification.id;
             }
@@ -92,6 +89,7 @@ $(document).ready(function () {
 
 
 function openNav() {
+    //
     //document.getElementById("mySidenav").style.width = "250px";
     $('#mySidenav').css('left','0');
     // document.getElementById("main").style.marginLeft = "250px";
@@ -137,7 +135,7 @@ function getPush() {
                         data: { typePush:result.type_push },
                         vibrate: true,
                         lockscreen: true,
-                        led: "#FF0000",
+                        led: "FFFFFF",
                     });
                 }
             }
