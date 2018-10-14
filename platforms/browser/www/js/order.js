@@ -81,3 +81,30 @@ function sendOffer() {
 
     return false;
 }
+
+function showPhone(id) {
+    $.ajax({
+        type: "POST",
+        url: "https://xn----dtbckhdelflyecx2bh6dk.xn--p1ai/mapi/order/showphone/",
+        data: "id="+id+"&uid="+userId,
+        //dataType: 'json',
+        success: function(data){
+            $.fancybox.open(data);
+
+        }
+    });
+}
+
+function loadPhone(id) {
+    $.ajax({
+        type: "POST",
+        url: "https://xn----dtbckhdelflyecx2bh6dk.xn--p1ai/mapi/order/loadphone/",
+        data: "id="+id+"&uid="+userId,
+        //dataType: 'json',
+        success: function(data){
+            if(data) {
+                $('.popup-phone-no-pay').html(data);
+            }
+        }
+    });
+}
