@@ -85,6 +85,20 @@ $(document).ready(function () {
         instructionsPullToRefresh: "",
         instructionsReleaseToRefresh: ""
     });*/
+    $('#owner-links-btn').on('click', function(){
+        location.replace($('#owner-links').val());
+        return false;
+    });
+    var storage = window.localStorage;
+    userId = storage.getItem('userId');
+    //alert(userId);
+    if(userId) {
+        $('#main-right-btn').attr('href','add.html').html('<i class="fas fa-plus"></i>');
+        $('.no-login-menu').hide();
+    }
+    else {
+        $('.if-login-menu').hide();
+    }
 });
 
 

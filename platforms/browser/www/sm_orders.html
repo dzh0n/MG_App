@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Все заказы</title>
+    <link rel="stylesheet" type="text/css" href="css/global.css" />
+    <link href="css/fonts/roboto/stylesheet.css" rel="stylesheet">
+    <link href="css/fonts/fontawesome/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bar">
+
+<div class="nav-bar">
+    <div class="nav-bar-wrap">
+        <a href="index.html"><i class="fas fa-arrow-left"></i></a>
+        <span>Все заказы</span>
+        <a href="add.html" ><i class="fas fa-plus"></i></a>
+    </div>
+</div>
+
+<div class="order-filter">
+    <h2>Показать заказы из разделов</h2>
+    <div class="order-filter-selectors">
+        <a class="order-filter-selector" href="g_orders.html"><img src="img/lorry.svg" height="25"> Грузоперевозки</a>
+        <a class="order-filter-selector" href="s_orders.html"><img src="img/forklift.svg" height="25"> Спецтехника</a>
+        <a class="order-filter-selector active" href="sm_orders.html"><img src="img/car.svg" height="25"> Грузоперевозки (легковой автомобиль)</a>
+    </div>
+</div>
+
+<div id="order-list">
+
+</div>
+
+
+
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.mask.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+    app.initialize();
+    orders_type = 2;
+</script>
+<script type="text/javascript" src="js/all_orders.js"></script>
+</body>
+</html>

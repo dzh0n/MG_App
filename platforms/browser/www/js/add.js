@@ -2,33 +2,37 @@ $(document).ready(function () {
     var storage = window.localStorage;
     userId = storage.getItem('userId');
 
-    $('#type').on('change', function() {
-        if($(this).val()==1){
-            $('#label-from').text('Адрес проведения работ');
-            $('#to-block').hide();
-        }
-        else {
-            $('#label-from').text('Откуда');
-            $('#to-block').show();
-        }
-    });
-    $('#address_from').autocomplete({
-        serviceUrl: 'https://xn----dtbckhdelflyecx2bh6dk.xn--p1ai/service/tocity',
-        minChars: 2,
-        autoSelectFirst: true,
-        onSelect: function (suggestion) {
-            //console.log('You selected: ' + suggestion.value + ', ' + suggestion.data);
-            $('#address_from_id').val(suggestion.data);
-        }
-    });
-    $('#address_to').autocomplete({
-        serviceUrl: 'https://xn----dtbckhdelflyecx2bh6dk.xn--p1ai/service/tocity',
-        minChars: 2,
-        autoSelectFirst: true,
-        onSelect: function (suggestion) {
-            $('#address_to_id').val(suggestion.data);
-        }
-    });
+    if(userId) {
+
+        $('#type').on('change', function () {
+            if ($(this).val() == 1) {
+                $('#label-from').text('Адрес проведения работ');
+                $('#to-block').hide();
+            } else {
+                $('#label-from').text('Откуда');
+                $('#to-block').show();
+            }
+        });
+        $('#address_from').autocomplete({
+            serviceUrl: 'https://xn----dtbckhdelflyecx2bh6dk.xn--p1ai/service/tocity',
+            minChars: 2,
+            autoSelectFirst: true,
+            onSelect: function (suggestion) {
+                //console.log('You selected: ' + suggestion.value + ', ' + suggestion.data);
+                $('#address_from_id').val(suggestion.data);
+            }
+        });
+        $('#address_to').autocomplete({
+            serviceUrl: 'https://xn----dtbckhdelflyecx2bh6dk.xn--p1ai/service/tocity',
+            minChars: 2,
+            autoSelectFirst: true,
+            onSelect: function (suggestion) {
+                $('#address_to_id').val(suggestion.data);
+            }
+        });
+    }
+    else
+        window.location = 'login.html';
 });
 
 function addOrder() {
