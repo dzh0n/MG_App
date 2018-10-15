@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
         <title>Мужичок-грузовичок</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" />
         <link rel="stylesheet" type="text/css" href="css/global.css" />
         <link href="css/fonts/roboto/stylesheet.css" rel="stylesheet">
         <link href="css/fonts/fontawesome/css/all.min.css" rel="stylesheet">
@@ -32,12 +33,56 @@
         </div>
     </div>
 
+    <div class="main-blocks">
+        <div class="container">
+            <div class="left-block">
+                <div class="main-customer">
+                    <div class="main-customer-title">Я заказчик</div>
+                    <div class="main-customer-subtitle">Заказать услугу грузоперевозки или спецтехники</div>
+                    <button class="main-customer-button" data-fancybox="" data-src="#customer-popup">Найти исполнителя</button>
+                </div>
+            </div>
+            <div class="right-block">
+                <div class="main-owner">
+                    <div class="main-owner-title">Я владелец техники</div>
+                    <div class="main-owner-subtitle">Оказывать услуги по грузоперевозкам или аренде спецтехники</div>
+                    <button class="main-owner-button" data-fancybox="" data-src="#owner-popup">Найти заказ</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="custom-fancy" id="customer-popup" style="display: none">
+        <div class="custom-fancy-content">
+            <div class="customer-btns-list">
+                <div id="customer-buttons">
+                    <a href="add.html" class="black-btn">+ Добавить заказ</a>
+                    <a href="orders.html">Посмотреть предложения мне</a>
+                    <a href="orders.html">Посмотреть все заказы</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="custom-fancy" id="owner-popup" style="display: none">
+        <div class="custom-fancy-content">
+            <div class="customer-btns-list">
+                <h2>Выберите категорию для поиска заказа</h2>
+                <select id="owner-links">
+                    <option value="/orders/gruzoperevozki">Грузоперевозки</option>
+                    <option value="/orders/spectekhnika">Спецтехника</option>
+                    <option value="/orders/poputnyjgruz">Грузоперевозки (легковой автомобиль)</option>
+                </select>
+                <button id="owner-links-btn">Найти</button>
+            </div>
+        </div>
+    </div>
 
 
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/libs/pulltorefresh.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
         app.initialize();
