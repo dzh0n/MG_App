@@ -64,7 +64,7 @@ document.addEventListener("deviceready", function(){
         }, 1000*60);
 
         cordova.plugins.notification.local.on("click", function (notification) {
-            if(parseInt(notification.data.typePush) < 2) {
+            if(parseInt(notification.data.typePush) < 3) {
                 window.location = 'order.html#'+notification.id;
             }
         });
@@ -138,10 +138,11 @@ function getPush() {
             dataType: 'json',
             success: function(result){
                 if(result.order_id>0) {
-                    if(result.type_push == 0)
+                    /*if(result.type_push == 0)
                         title = 'Появился новый заказ';
                     if(result.type_push == 1)
-                        title = 'Поступило новое предложение к вашему заказу';
+                        title = 'Поступило новое предложение к вашему заказу';*/
+                    title = result.title
                     cordova.plugins.notification.local.schedule({
                         id: result.order_id,
                         title: title,

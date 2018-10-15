@@ -1005,7 +1005,7 @@ a {
     background-color: #fff;
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px;
+    padding-top: 45px;
 }
 
 .sidenav a {
@@ -1031,7 +1031,7 @@ a {
 }
 
 .sidenav a:hover {
-    color: #f1f1f1;
+    /*color: #f1f1f1;*/
 }
 .sidenav ul li:nth-child(1) {
     border-bottom: #ececec 1px solid;
