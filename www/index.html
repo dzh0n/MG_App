@@ -57,14 +57,14 @@
                 <div class="main-customer">
                     <div class="main-customer-title">Я заказчик</div>
                     <div class="main-customer-subtitle">Заказать услугу грузоперевозки или спецтехники</div>
-                    <button class="main-customer-button" data-fancybox="" data-src="#customer-popup">Найти исполнителя</button>
+                    <button class="main-customer-button" data-fancybox="" data-src="#customer-popup">Заказать технику</button>
                 </div>
             </div>
             <div class="right-block">
                 <div class="main-owner">
                     <div class="main-owner-title">Я владелец техники</div>
                     <div class="main-owner-subtitle">Оказывать услуги по грузоперевозкам или аренде спецтехники</div>
-                    <button class="main-owner-button" data-fancybox="" data-src="#owner-popup">Найти заказ</button>
+                    <button class="main-owner-button" data-fancybox="" data-src="#owner-popup">Перечень заявок</button>
                 </div>
             </div>
         </div>
@@ -73,6 +73,7 @@
     <div class="custom-fancy" id="customer-popup" style="display: none">
         <div class="custom-fancy-content">
             <div class="customer-btns-list">
+                <h2>Выберите нужные <br>вам действия</h2>
                 <div id="customer-buttons">
                     <a href="add.html" class="black-btn">+ Добавить заказ</a>
                     <a href="orders.html">Посмотреть предложения мне</a>
@@ -85,8 +86,8 @@
     <div class="custom-fancy" id="owner-popup" style="display: none">
         <div class="custom-fancy-content">
             <div class="customer-btns-list">
-                <h2>Выберите категорию для поиска заказа</h2>
-                <select id="owner-links">
+                <h2>Выберите категорию <br>для поиска заказа</h2>
+                <select id="owner-links" disabled>
                     <option value="g_orders.html">Грузоперевозки</option>
                     <option value="s_orders.html">Спецтехника</option>
                     <option value="sm_orders.html">Грузоперевозки (легковой автомобиль)</option>

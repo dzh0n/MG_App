@@ -627,15 +627,22 @@ a {
     /*display: none;*/
     border-radius: 3px;
     overflow: visible;
+    padding: 0px;
+    width: 95%;
 }
 .custom-fancy .fancybox-close-small {
     /*color: #FFFFFF;*/
-    /*margin: -40px -50px 0px 0px;*/
-    width: 50px;
-    height: 50px;
+    margin: -8px -8px 0px 0px;
+    width: 25px;
+    height: 25px;
+    padding: 0px;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 1;
+
 }
 .custom-fancy-content {
-    padding: 20px 0px 10px;
+    /*padding: 20px 0px 10px;*/
 }
 .popup-phone {
     text-align: center;
@@ -726,7 +733,7 @@ a {
     width: 100%;
 }
 .main-blocks {
-    background-image: url(../img/bg-right.jpg);
+    background-image: url(../img/app_bg.jpg);
     background-position: center;
     background-size: cover;
 }
@@ -769,8 +776,8 @@ a {
 .main-customer-button {
     cursor: pointer;
     width: 360px;
-    color: #fff;
-    background-color: #000;
+    color: #000;
+    background-color: #ffdd0a;
     border-radius: 10px;
     font-size: 16px;
     font-weight: 900;
@@ -783,7 +790,7 @@ a {
     border: none;
 }
 .main-customer-button:hover {
-    background: #333;
+   /* background: #333;*/
 }
 .right-block {
    /* background: url(../img/bg-right.jpg) center no-repeat;*/
@@ -840,7 +847,7 @@ a {
     background: none;
 }
 .main-blocks {
-    background-image: url(../img/bg-right.jpg);
+    background-image: url(../img/app_bg.jpg);
     background-position: center;
     background-size: cover;
 }
@@ -864,19 +871,31 @@ a {
     align-items: center;
 }
 #customer-buttons {
-    width: 300px;
+    width: 95%;
+    margin-bottom: 20px;
 }
 .customer-btns-list h2 {
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 25px;
     text-align: center;
+    background-image: linear-gradient(to right, #ffdc0c, #fed509, #fecd07, #fcc606, #fbbf07);
+    width: 100%;
+    min-width: 100%;
+    padding: 10px 20px;
+    -webkit-border-top-left-radius: 3px;
+    -webkit-border-top-right-radius: 3px;
+    -moz-border-radius-topleft: 3px;
+    -moz-border-radius-topright: 3px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border:none;
 }
 .customer-btns-list select {
     display: block;
     font-weight: 500;
     background-color: #FFFFFF;
     color: #000;
-    border: #000 2px solid;
+    border: #000 1px solid;
     text-decoration: none;
     text-align: center;
     font-size: 17px;
@@ -886,22 +905,27 @@ a {
     outline: none;
     font-family: inherit;
     box-sizing: border-box;
-    width: 100%;
+    width: 90%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url(../img/_select.png) 95% 50% no-repeat;
 }
 .customer-btns-list button {
     border: none;
     font-family: inherit;
     font-weight: 500;
     color: #000;
-    background-color: #ffdd0a;
+    background-image: linear-gradient(to right, #ffdc0c, #fed509, #fecd07, #fcc606, #fbbf07);
     text-align: center;
     display: block;
-    width: 200px;
+    width: 90%;
     font-size: 17px;
     border-radius: 5px;
     padding: 15px 20px;
     cursor: pointer;
     outline: none;
+    margin-bottom: 20px;
 }
 .customer-btns-list a {
     display: block;
