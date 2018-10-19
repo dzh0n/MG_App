@@ -30,6 +30,9 @@ body.bar {
     padding-top: 55px;
     box-sizing: border-box;
 }
+body.bar.sub {
+    padding-top: 110px;
+}
 a {
     color: #0054b9;
 }
@@ -40,17 +43,21 @@ a {
     background-color: #ffdd0a;
     height: 55px;
     width: 100%;
-    padding: 0px 20px;
+    /*padding: 0px 20px;*/
     position: fixed;
     top: 0;
     left: 0;
     z-index: 10;
 }
+.nav-bar.sub {
+    height: 110px;
+}
 .nav-bar-wrap {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 100%;
+    height: 55px;
+    padding: 0 20px;
 }
 .nav-bar span {
     font-size: 22px;
@@ -1076,4 +1083,29 @@ a {
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
+}
+
+
+.sub-header {
+    position: relative;
+    background-color: #ffdd0a;
+}
+.swipe-tabs {
+    display: flex;
+    overflow: scroll;
+}
+.swipe-tab {
+    padding: 15px 15px;
+    white-space: nowrap;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    font-size: 15px;
+    border-bottom: #ffdd0a 2px solid;
+}
+.swipe-tab img {
+    margin-right: 10px;
+}
+.swipe-tab.active {
+    border-bottom-color: #000;
 }

@@ -99,6 +99,29 @@ $(document).ready(function () {
     else {
         $('.if-login-menu').hide();
     }
+
+
+    var position = $(window).scrollTop();
+
+// should start at 0
+
+    $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+        if(scroll > position) {
+            if($('body').hasClass('sub')) {
+                $('.nav-bar-wrap').slideUp();
+                $('.nav-bar.sub').css('height','55px');
+            }
+        } else {
+            if($('body').hasClass('sub')) {
+                $('.nav-bar-wrap').slideDown();
+                $('.nav-bar.sub').css('height','110px');
+            }
+        }
+        position = scroll;
+    });
+
+
 });
 
 
