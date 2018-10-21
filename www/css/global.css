@@ -1085,6 +1085,13 @@ a {
     .sidenav a {font-size: 18px;}
 }
 
+.form-link {
+    text-align: center;
+    margin: 0 auto;
+    color: inherit;
+    font-size: 16px;
+}
+
 
 .sub-header {
     position: relative;
