@@ -342,7 +342,7 @@ a {
 .order-item-info {
     display: flex;
     align-items: center;
-    margin: 20px 0px;
+    margin: 5px 0px 10px;
     flex-direction: column;
 }
 .order-item-label {
