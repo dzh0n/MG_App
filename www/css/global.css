@@ -405,6 +405,9 @@ a {
 .order-item-bottom a .fa-phone {
     transform: rotate(-245deg);
 }
+#order-list {
+    overflow: hidden;
+}
 .page-content .order-list-item {
     padding: 0px;
     margin-bottom: 15px;
