@@ -86,6 +86,12 @@ $(document).ready(function () {
         instructionsReleaseToRefresh: ""
     });*/
    $('.active-cat').on('click', function () {
+       if($('.active-cat i').hasClass('fa-chevron-down')) {
+           $('.active-cat i').removeClass('fa-chevron-down').addClass('fa-chevron-up');
+       }
+       else {
+           $('.active-cat i').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+       }
        $('.sub-cats').slideToggle();
    });
     $('#owner-links-btn').on('click', function(){
