@@ -85,6 +85,11 @@ $(document).ready(function () {
         instructionsPullToRefresh: "",
         instructionsReleaseToRefresh: ""
     });*/
+
+   //проверка региона
+    checkRegion();
+
+
    $('.active-cat').on('click', function () {
        if($('.active-cat i').hasClass('fa-chevron-down')) {
            $('.active-cat i').removeClass('fa-chevron-down').addClass('fa-chevron-up');
@@ -127,6 +132,14 @@ $(document).ready(function () {
         }
         hideCategories();
         position = scroll;
+    });
+
+
+    $('.my-geo').on('click', function () {
+        $.fancybox.open({
+            src  : '#regionSelect',
+            type : 'inline'
+        });
     });
 
 
@@ -194,4 +207,44 @@ function getPush() {
             }
         });
     }
+}
+
+function checkRegion() {
+    var storage = window.localStorage;
+    var regionId = storage.getItem('regionId');
+    var userId = storage.getItem('userId');
+    if(regionId > 0)
+    {
+        //alert(regionId);
+    }
+    else {
+        if(userId>0) { //если пользователь залогинен
+            $.ajax({
+                type: "POST",
+                url: "https://xn----dtbckhdelflyecx2bh6dk.xn--p1ai/mapi/regions/regiondatauser/uid/"+userId,
+                // data: "username="+$('#phone').val()+"&password="+$('#password').val(),
+                success: function(data){
+                    json = JSON.parse(data);
+                    storage.setItem('regionId',json.id);
+                    storage.setItem('regionName',json.name);
+                }
+            });
+        }
+        else {
+            $.ajax({
+                type: "POST",
+                url: "https://xn----dtbckhdelflyecx2bh6dk.xn--p1ai/mapi/regions/regiondata/id/1",
+                // data: "username="+$('#phone').val()+"&password="+$('#password').val(),
+                success: function(data){
+                    json = JSON.parse(data);
+                    storage.setItem('regionId',json.id);
+                    storage.setItem('regionName',json.name);
+                }
+            });
+        }
+
+    }
+   if($('.my-geo span').length) {
+       $('.my-geo span').text(storage.getItem('regionName'));
+   }
 }
