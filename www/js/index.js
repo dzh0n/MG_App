@@ -75,8 +75,7 @@ document.addEventListener("deviceready", function(){
 
 $(document).ready(function () {
 
-    //SpinnerDialog.show();
-    window.plugins.SpinnerDialog.show();
+
 
    /* PullToRefresh.init({
         mainElement: 'body',

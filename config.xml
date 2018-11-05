@@ -26,9 +26,6 @@
     <plugin name="cordova-plugin-splashscreen" spec="~5.0.2" />
     <plugin spec="https://github.com/katzer/cordova-plugin-local-notifications.git#a75c097" />
 
-    <plugin spec="https://github.com/Paldom/SpinnerDialog.git" />
-
-
 
     <preference name="ShowSplashScreenSpinner" value="false"/>
 
