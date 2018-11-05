@@ -136,9 +136,16 @@ $(document).ready(function () {
 
 
     $('.my-geo').on('click', function () {
+        var storage = window.localStorage;
+        var popularRegions = storage.getItem('popularRegions');
+        $('.region-select-list').html('');
+       $.each(JSON.parse(popularRegions), function (key,value) {
+           $('.region-select-list').append('<a href="javascript:;" data-id="'+value.id+'">'+value.name+'</a>');
+       });
         $.fancybox.open({
             src  : '#regionSelect',
-            type : 'inline'
+            type : 'inline',
+            autoFocus: false
         });
     });
 
@@ -213,6 +220,9 @@ function checkRegion() {
     var storage = window.localStorage;
     var regionId = storage.getItem('regionId');
     var userId = storage.getItem('userId');
+    //storage.removeItem('popularRegions');
+    var popularRegions = storage.getItem('popularRegions');
+
     if(regionId > 0)
     {
         //alert(regionId);
@@ -243,6 +253,16 @@ function checkRegion() {
             });
         }
 
+    }
+    if(popularRegions == null) {
+        $.ajax({
+            type: "POST",
+            url: "https://xn----dtbckhdelflyecx2bh6dk.xn--p1ai/mapi/regions/popular",
+            success: function(data){
+                json = JSON.parse(data);
+                storage.setItem('popularRegions',data);
+            }
+        });
     }
    if($('.my-geo span').length) {
        $('.my-geo span').text(storage.getItem('regionName'));
