@@ -147,7 +147,14 @@ $(document).ready(function () {
             type : 'inline',
             autoFocus: false
         });
+        $('.region-select-list a').on('click', function () {
+            setRegion($(this).data('id'), $(this).text());
+            $.fancybox.close();
+            return false;
+        });
     });
+
+
 
 
 });
@@ -267,4 +274,11 @@ function checkRegion() {
    if($('.my-geo span').length) {
        $('.my-geo span').text(storage.getItem('regionName'));
    }
+}
+
+function setRegion(id, name) {
+    var storage = window.localStorage;
+    storage.setItem('regionId', id);
+    storage.setItem('regionName', name);
+    location.reload();
 }
