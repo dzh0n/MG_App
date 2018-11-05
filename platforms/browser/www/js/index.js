@@ -152,6 +152,15 @@ $(document).ready(function () {
             $.fancybox.close();
             return false;
         });
+        $('#region-input').autocomplete({
+            serviceUrl: 'https://xn----dtbckhdelflyecx2bh6dk.xn--p1ai/mapi/regions/select',
+            minChars: 2,
+            autoSelectFirst: true,
+            onSelect: function (suggestion) {
+                //alert('You selected: ' + suggestion.value + ', ' + suggestion.data);
+                setRegion(suggestion.data, suggestion.value);
+            }
+        });
     });
 
 
