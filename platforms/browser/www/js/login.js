@@ -27,9 +27,13 @@ function login() {
             url: "https://xn----dtbckhdelflyecx2bh6dk.xn--p1ai/mapi/registration/login",
             data: "username="+$('#phone').val()+"&password="+$('#password').val(),
             success: function(msg){
-                if($.isNumeric(msg)) {
+
+                if(IsJsonString(msg)) {
+                    data = JSON.parse(msg);
                     var storage = window.localStorage;
-                    storage.setItem('userId', msg);
+                    storage.setItem('userId', data.uid);
+                    storage.setItem('userName', data.name);
+                    storage.setItem('userBalance', data.balance);
                     window.location = 'index.html';
                 }
                 else {
@@ -43,4 +47,13 @@ function login() {
             }
         });
     }
+}
+
+function IsJsonString(str) {
+    try {
+        JSON.parse(str);
+    } catch (e) {
+        return false;
+    }
+    return true;
 }

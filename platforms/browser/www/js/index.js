@@ -91,6 +91,8 @@ $(document).ready(function () {
    //проверка региона
     checkRegion();
 
+    setUserData();
+
 
    $('.active-cat').on('click', function () {
        if($('.active-cat i').hasClass('fa-chevron-down')) {
@@ -284,7 +286,10 @@ function checkRegion() {
     }
    if($('.my-geo span').length) {
        $('.my-geo span').text(storage.getItem('regionName'));
-   }
+   }//
+    if($('#regionName').length) {
+        $('#regionName').text(storage.getItem('regionName'));
+    }
 }
 
 function setRegion(id, name) {
@@ -292,4 +297,15 @@ function setRegion(id, name) {
     storage.setItem('regionId', id);
     storage.setItem('regionName', name);
     location.reload();
+}
+
+
+function setUserData() {
+    var storage = window.localStorage;
+    if($('#userName').length) {
+        $('#userName').text(storage.getItem('userName'));
+    }
+    if($('#userBalance').length) {
+        $('#userBalance').text(storage.getItem('userBalance'));
+    }
 }
