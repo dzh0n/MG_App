@@ -1274,3 +1274,10 @@ a {
 .swipe-tab.active {
     border-bottom-color: #000;
 }*/
+#rez {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    color:#ffffff;
+    transform: translateX(-50%);
+}
