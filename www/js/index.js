@@ -259,6 +259,24 @@ function getPush(type) {
                         lockscreen: true,
                         led: "FFFFFF",
                     });
+
+                    if(type == 0) {
+                        data = storage.getItem('sub_0').split(',');
+                        data[0] = result.order_id;
+                        storage.setItem('sub_0', data.join(','));
+                    }
+                    if(type == 1) {
+                        data = storage.getItem('sub_1').split(',');
+                        data[0] = result.order_id;
+                        storage.setItem('sub_1', data.join(','));
+                    }
+                    if(type == 2) {
+                        data = storage.getItem('sub_2').split(',');
+                        data[0] = result.order_id;
+                        storage.setItem('sub_2', data.join(','));
+                    }
+
+
                 }
             }
         });
