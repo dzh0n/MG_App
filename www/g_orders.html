@@ -15,7 +15,7 @@
     <div class="nav-bar-wrap">
         <a href="index.html"><i class="fas fa-arrow-left"></i></a>
         <span>Грузоперевозки</span>
-        <a href="notifications.html" ><i class="far fa-bell"></i></a>
+        <a href="javascript:;" onclick="openSubscribe(0)"><i class="far fa-bell"></i></a>
     </div>
     <div class="sub-header ">
         <div class="sub-header-col">
@@ -40,6 +40,18 @@
 
 </div>
 
+<div id="circle-helper">
+    <span></span>
+</div>
+
+<div id="subscribe-block">
+    <div class="subscribe-block-inner">
+        <h3>Подписка</h3>
+        <p>Вы хотите получать уведомления о новых заказах в разделе <span>Грузоперевозки</span> для региона - <span id="rg-label"></span>?</p>
+    </div>
+    <button onclick="setSubscribe(0)">Да, получать</button>
+</div>
+
 <div id="regionSelect">
     <div class="region-select">
         <h3>Выберите регион</h3>
@@ -61,6 +73,7 @@
 <script type="text/javascript">
     app.initialize();
     orders_type = 0;
+    checkSubscribe(orders_type)
 </script>
 <script type="text/javascript" src="js/all_orders.js"></script>
 </body>

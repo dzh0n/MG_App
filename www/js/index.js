@@ -168,8 +168,6 @@ $(document).ready(function () {
     });
 
 
-
-
 });
 
 
@@ -290,6 +288,9 @@ function checkRegion() {
     if($('#regionName').length) {
         $('#regionName').text(storage.getItem('regionName'));
     }
+    if($('#rg-label').length) {
+        $('#rg-label').text(storage.getItem('regionName'));
+    }
 }
 
 function setRegion(id, name) {
@@ -307,5 +308,72 @@ function setUserData() {
     }
     if($('#userBalance').length) {
         $('#userBalance').text(storage.getItem('userBalance'));
+    }
+}
+
+//******//
+function openSubscribe(type) {
+    $.fancybox.open({
+        src  : '#subscribe-block',
+        type : 'inline',
+        autoFocus: false
+    });
+}
+
+function setSubscribe(type) {
+    var storage = window.localStorage;
+    if(type == 0) {
+        if(storage.getItem('sub_0') != null)
+        {
+            storage.removeItem('sub_0');
+        }
+        else {
+            storage.setItem('sub_0', 0);
+        }
+    }
+    if(type == 1) {
+        if(storage.getItem('sub_1') != null)
+        {
+            storage.removeItem('sub_1');
+        }
+        else {
+            storage.setItem('sub_1', 0);
+        }
+    }
+    if(type == 2) {
+        if(storage.getItem('sub_2') != null)
+        {
+            storage.removeItem('sub_2');
+        }
+        else {
+            storage.setItem('sub_2', 0);
+        }
+    }
+    $.fancybox.close();
+    location.reload();
+}
+
+function checkSubscribe(type) {
+    var storage = window.localStorage;
+    if(type == 0) {
+        if(storage.getItem('sub_0') != null)
+        {
+            $('#subscribe-block button').text('Больше не получать');
+            $('.nav-bar-wrap a:nth-child(3)').append('<i class="fas fa-check-circle"></i>');
+        }
+    }
+    if(type == 1) {
+        if(storage.getItem('sub_1') != null)
+        {
+            $('#subscribe-block button').text('Больше не получать');
+            $('.nav-bar-wrap a:nth-child(3)').append('<i class="fas fa-check-circle"></i>');
+        }
+    }
+    if(type == 2) {
+        if(storage.getItem('sub_2') != null)
+        {
+            $('#subscribe-block button').text('Больше не получать');
+            $('.nav-bar-wrap a:nth-child(3)').append('<i class="fas fa-check-circle"></i>');
+        }
     }
 }
