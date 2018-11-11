@@ -60,8 +60,16 @@ document.addEventListener("deviceready", function(){
         StatusBar.backgroundColorByHexString("#ffdd0a");
 
         setInterval(function() {
-            getPush();
-        }, 1000*60);
+            getPush(0);
+        }, 1000*45);
+
+        setInterval(function() {
+            getPush(1);
+        }, 1000*45);
+
+        setInterval(function() {
+            getPush(2);
+        }, 1000*45);
 
         cordova.plugins.notification.local.on("click", function (notification) {
             if(parseInt(notification.data.typePush) < 3) {
@@ -203,14 +211,37 @@ function logout() {
     window.location = 'index.html';
 }
 
-function getPush() {
+function getPush(type) {
+    load = false;
+    data = null;
     var storage = window.localStorage;
-    userId = storage.getItem('userId');
-    if(userId != '') {
+    if(type == 0) {
+        if(storage.getItem('sub_0') != null)
+        {
+            data = storage.getItem('sub_0').split(',');
+            load = true;
+        }
+    }
+    if(type == 1) {
+        if(storage.getItem('sub_1') != null)
+        {
+            data = storage.getItem('sub_1').split(',');
+            load = true;
+        }
+    }
+    if(type == 2) {
+        if(storage.getItem('sub_2') != null)
+        {
+            data = storage.getItem('sub_2').split(',');
+            load = true;
+        }
+    }
+
+    if(load) {
         $.ajax({
             type: "POST",
-            url: "https://xn----dtbckhdelflyecx2bh6dk.xn--p1ai/mapi/push/",
-            data: "uid="+userId,
+            url: "https://xn----dtbckhdelflyecx2bh6dk.xn--p1ai/mapi/push/new",
+            data: "type="+type+"&lastId="+data[0]+"&regionId="+data[1],
             dataType: 'json',
             success: function(result){
                 if(result.order_id>0) {
@@ -322,13 +353,14 @@ function openSubscribe(type) {
 
 function setSubscribe(type) {
     var storage = window.localStorage;
+    regionId = storage.getItem('regionId');
     if(type == 0) {
         if(storage.getItem('sub_0') != null)
         {
             storage.removeItem('sub_0');
         }
         else {
-            storage.setItem('sub_0', 0);
+            storage.setItem('sub_0', '0,'+regionId);
         }
     }
     if(type == 1) {
@@ -337,7 +369,7 @@ function setSubscribe(type) {
             storage.removeItem('sub_1');
         }
         else {
-            storage.setItem('sub_1', 0);
+            storage.setItem('sub_1', '0,'+regionId);
         }
     }
     if(type == 2) {
@@ -346,7 +378,7 @@ function setSubscribe(type) {
             storage.removeItem('sub_2');
         }
         else {
-            storage.setItem('sub_2', 0);
+            storage.setItem('sub_2', '0,'+regionId);
         }
     }
     $.fancybox.close();
