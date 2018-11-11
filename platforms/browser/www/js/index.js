@@ -259,10 +259,57 @@ function getPush(type) {
                         lockscreen: true,
                         led: "FFFFFF",
                     });
+
+                    if(type == 0) {
+                        data = storage.getItem('sub_0').split(',');
+                        data[0] = result.order_id;
+                        storage.setItem('sub_0', data.join(','));
+                    }
+                    if(type == 1) {
+                        data = storage.getItem('sub_1').split(',');
+                        data[0] = result.order_id;
+                        storage.setItem('sub_1', data.join(','));
+                    }
+                    if(type == 2) {
+                        data = storage.getItem('sub_2').split(',');
+                        data[0] = result.order_id;
+                        storage.setItem('sub_2', data.join(','));
+                    }
+
+
                 }
             }
         });
     }
+}
+
+function getPushOffer() {
+    var storage = window.localStorage;
+    uid = storage.getItem('userId');
+    $.ajax({
+        type: "POST",
+        url: "https://xn----dtbckhdelflyecx2bh6dk.xn--p1ai/mapi/push",
+        data: "uid="+type,
+        dataType: 'json',
+        success: function(result){
+            if(result.order_id>0) {
+                /*if(result.type_push == 0)
+                    title = 'Появился новый заказ';
+                if(result.type_push == 1)
+                    title = 'Поступило новое предложение к вашему заказу';*/
+                title = result.title
+                cordova.plugins.notification.local.schedule({
+                    id: result.order_id,
+                    title: title,
+                    text: result.message,
+                    data: { typePush:result.type_push },
+                    vibrate: true,
+                    lockscreen: true,
+                    led: "FFFFFF",
+                });
+            }
+        }
+    });
 }
 
 function checkRegion() {

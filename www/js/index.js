@@ -71,6 +71,10 @@ document.addEventListener("deviceready", function(){
             getPush(2);
         }, 1000*45);
 
+        setInterval(function() {
+            getPushOffer();
+        }, 1000*60);
+
         cordova.plugins.notification.local.on("click", function (notification) {
             if(parseInt(notification.data.typePush) < 3) {
                 window.location = 'order.html#'+notification.id;
@@ -277,6 +281,37 @@ function getPush(type) {
                     }
 
 
+                }
+            }
+        });
+    }
+}
+
+function getPushOffer() {
+    var storage = window.localStorage;
+    uid = storage.getItem('userId');
+    if(storage.getItem('userId') != null) {
+        $.ajax({
+            type: "POST",
+            url: "https://xn----dtbckhdelflyecx2bh6dk.xn--p1ai/mapi/push",
+            data: "uid=" + uid,
+            dataType: 'json',
+            success: function (result) {
+                if (result.order_id > 0) {
+                    /*if(result.type_push == 0)
+                        title = 'Появился новый заказ';
+                    if(result.type_push == 1)
+                        title = 'Поступило новое предложение к вашему заказу';*/
+                    title = result.title
+                    cordova.plugins.notification.local.schedule({
+                        id: result.order_id,
+                        title: title,
+                        text: result.message,
+                        data: {typePush: result.type_push},
+                        vibrate: true,
+                        lockscreen: true,
+                        led: "FFFFFF",
+                    });
                 }
             }
         });
