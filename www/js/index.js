@@ -219,6 +219,10 @@ function getPush(type) {
     load = false;
     data = null;
     var storage = window.localStorage;
+    uid = storage.getItem('userId');
+    if(storage.getItem('userId') == null) {
+        uid = 0;
+    }
     if(type == 0) {
         if(storage.getItem('sub_0') != null)
         {
@@ -245,7 +249,7 @@ function getPush(type) {
         $.ajax({
             type: "POST",
             url: "https://xn----dtbckhdelflyecx2bh6dk.xn--p1ai/mapi/push/new",
-            data: "type="+type+"&lastId="+data[0]+"&regionId="+data[1],
+            data: "type="+type+"&lastId="+data[0]+"&regionId="+data[1]+"&uid="+uid,
             dataType: 'json',
             success: function(result){
                 if(result.order_id>0) {
