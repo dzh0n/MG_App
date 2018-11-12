@@ -466,3 +466,16 @@ function checkSubscribe(type) {
         }
     }
 }
+
+
+function checkSubscribeHelp() {
+    var storage = window.localStorage;
+    if(storage.getItem('subscribeHelp') == null) {
+        setTimeout(function(){$('#circle-helper').fadeIn('4000');}, 4000);
+    }
+}
+function subscribeHelpHide() {
+    var storage = window.localStorage;
+    storage.setItem('subscribeHelp', 1);
+    $('#circle-helper').fadeOut('4000');
+}

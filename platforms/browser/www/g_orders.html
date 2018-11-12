@@ -41,7 +41,7 @@
 </div>
 
 <div id="circle-helper">
-    <span></span>
+    <span>Используйте эту кнопку, чтобы получать уведомления о новых заказах<br><button onclick="subscribeHelpHide()">Понятно</button></span>
 </div>
 
 <div id="subscribe-block">
@@ -73,7 +73,8 @@
 <script type="text/javascript">
     app.initialize();
     orders_type = 0;
-    checkSubscribe(orders_type)
+    checkSubscribe(orders_type);
+    checkSubscribeHelp();
 </script>
 <script type="text/javascript" src="js/all_orders.js"></script>
 </body>
