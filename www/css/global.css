@@ -325,8 +325,8 @@ a {
 }
 .order-list-item {
     background-color: #FFFFFF;
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
     border: #fff 2px solid;
 }
 .order-list-item:hover {
@@ -345,7 +345,7 @@ a {
 .order-item-info {
     display: flex;
     align-items: center;
-    margin: 5px 0px 10px;
+    margin: 0px 0px 10px;
     flex-direction: column;
 }
 .order-item-label {
