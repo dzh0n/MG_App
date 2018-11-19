@@ -1365,3 +1365,12 @@ a {
 .popup-phone-no-pay {
     padding: 20px;
 }
+
+
+.red-bell {
+
+}
+.red-bell i {
+    color: red;
+    font-size: 20px;
+}
