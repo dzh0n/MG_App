@@ -35,7 +35,7 @@
 
 
 
-   <!-- <icon src="www/icon.png" /> -->
+   <icon src="www/icon.png" />
     <platform name="android">
         <icon src="www/icon.png" density="ldpi" />
         <splash qualifier="land-ldpi" src="www/res/screen/android/drawable-land-ldpi-screen.png" />
