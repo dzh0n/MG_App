@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="ru.mg.app" version="1.4.4" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="ru.mg.app" version="1.4.5" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Мужичок-грузовичок</name>
     <description>
         Приложение сайта мужичок-грузовичок.рф
@@ -35,7 +35,7 @@
 
 
 
-    <icon src="www/icon.png" />
+   <!-- <icon src="www/icon.png" /> -->
     <platform name="android">
         <icon src="www/icon.png" density="ldpi" />
         <splash qualifier="land-ldpi" src="www/res/screen/android/drawable-land-ldpi-screen.png" />
