@@ -15,6 +15,9 @@
     </author>
     <content src="index.html" />
     <icon src="www/icon.png" />
+    <icon height="120" platform="ios" src="www/res/icons/ios/icon-120.png" width="120" />
+    <icon height="76" platform="ios" src="www/res/icons/ios/icon-76.png" width="76" />
+    <icon height="152" platform="ios" src="www/res/icons/ios/icon-152.png" width="152" />
     <access origin="*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" launch-external="yes" />
