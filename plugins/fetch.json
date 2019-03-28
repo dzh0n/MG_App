@@ -1,4 +1,20 @@
 {
+    "cordova-plugin-firebase": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-firebase@^2.0.0"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "onesignal-cordova-plugin": {
+        "source": {
+            "type": "registry",
+            "id": "onesignal-cordova-plugin@^2.4.1"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
     "cordova-plugin-network-information": {
         "source": {
             "type": "registry",
@@ -55,28 +71,12 @@
         "is_top_level": true,
         "variables": {}
     },
-    "cordova-plugin-splashscreen": {
+    "com.telerik.plugins.nativepagetransitions": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-splashscreen@~5.0.2"
+            "id": "com.telerik.plugins.nativepagetransitions"
         },
         "is_top_level": true,
-        "variables": {}
-    },
-    "cordova-plugin-local-notification": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-local-notification"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
-    "cordova-plugin-badge": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-badge"
-        },
-        "is_top_level": false,
         "variables": {}
     }
 }

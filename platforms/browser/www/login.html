@@ -3,66 +3,66 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title>Авторизация</title>
-    <link rel="stylesheet" type="text/css" href="css/global.css" />
-    <link href="css/fonts/roboto/stylesheet.css" rel="stylesheet">
-    <link href="css/fonts/fontawesome/css/all.min.css" rel="stylesheet">
+    <meta name="format-detection" content="telephone=no"/>
+    <title></title>
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/animate.css" rel="stylesheet">
+    <link href="assets/fonts/roboto/roboto.css" rel="stylesheet">
+    <link href="assets/fonts/fontawesome/css/all.min.css" rel="stylesheet">
 </head>
-<body class="bar">
+<body class="add-page animated fadeIn">
 
-<div class="nav-bar">
-    <div class="nav-bar-wrap">
-        <a href="index.html"><i class="fas fa-arrow-left"></i></a>
-        <span>Вход</span>
-        <a href="javascript:;">&nbsp;&nbsp;</a>
+<div class="wrapper">
+    <!-- header -->
+    <div class="header-fixed">
+        <div class="header-fixed-left">
+            <a href="javascript:;" onclick="back();"><i class="fas fa-arrow-left"></i></a>
+        </div>
+        <div class="header-fixed-center">
+            <h2>Вход</h2>
+        </div>
+        <div class="header-fixed-right">
+            <a href="javascript:;"></a>
+        </div>
     </div>
-</div>
+    <!-- header -->
 
-<div class="page-content b-center">
-    <div class="form">
-        <form id="reg-form" action="" method="post" onsubmit="return false;">
-            <div class="form-row">
-                <div class="form-row-item">
-                    <label>Номер телефона</label>
-                    <input class="phone-mask" placeholder="+7 (***) ***-**-**" autocomplete="off" name="phone" id="phone" type="tel" maxlength="18">
-                    <div class="errorMessage" id="User_phone_em_" style="display:none"></div>
-                </div>
+    <form id="login-form" method="post">
+        <div class="order-form">
+            <div class="order-form-row">
+                <label>Номер телефона</label>
+                <input type="tel" class="phone-mask" name="phone" required placeholder="+7 (***) ***-**-**">
             </div>
-            <div class="form-row">
-                <div class="form-row-item">
-                    <label>Пароль</label>
-                    <input name="password" id="password" type="password" maxlength="255">
-                    <div class="errorMessage" id="User_password_em_" style="display:none"></div>
-                </div>
+            <div class="order-form-row">
+                <label>Пароль</label>
+                <input type="password" class="" name="password" required placeholder="Ваш пароль">
             </div>
-            <div class="form-row">
-                <div class="form-row-item text-center">
-                    <a href="remind.html" class="remind-link">Забыли свой пароль?</a>
-                </div>
+            <div class="add-order-btn-wrap no-fix">
+                <button><span>Войти</span></button>
             </div>
-            <div class="form-row">
-                <div class="form-row-item">
-                    <button onclick="login();" id="login-btn">Войти</button>
-                </div>
+            <div class="order-form-row reg-row">
+                <a href="registration.html">Зарегистрироваться</a>
             </div>
-            <div class="form-row">
-                <div class="form-row-item">
-                    <button onclick="window.location='registration.html';" id="reglink-btn">Зарегистрироваться</button>
-                </div>
+            <div class="order-form-row remind-row">
+                <a href="remind.html">Забыли свой пароль?</a>
             </div>
-        </form>
-    </div>
-</div>
+        </div>
+    </form>
 
+
+
+
+
+</div><!-- .wrapper -->
 
 
 <script type="text/javascript" src="cordova.js"></script>
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/jquery.mask.min.js"></script>
-<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/libs/jquery.mask.min.js"></script>
+<script type="text/javascript" src="assets/js/global.js"></script>
+<script type="text/javascript" src="assets/js/login.js"></script>
 <script type="text/javascript">
     app.initialize();
 </script>
-<script type="text/javascript" src="js/login.js"></script>
 </body>
 </html>

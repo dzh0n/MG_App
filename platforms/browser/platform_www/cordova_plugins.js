@@ -1,6 +1,22 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
 module.exports = [
     {
+        "file": "plugins/cordova-plugin-firebase/www/firebase-browser.js",
+        "id": "cordova-plugin-firebase.FirebasePlugin",
+        "pluginId": "cordova-plugin-firebase",
+        "clobbers": [
+            "FirebasePlugin"
+        ]
+    },
+    {
+        "file": "plugins/onesignal-cordova-plugin/www/OneSignal.js",
+        "id": "onesignal-cordova-plugin.OneSignal",
+        "pluginId": "onesignal-cordova-plugin",
+        "clobbers": [
+            "OneSignal"
+        ]
+    },
+    {
         "file": "plugins/cordova-plugin-network-information/www/network.js",
         "id": "cordova-plugin-network-information.network",
         "pluginId": "cordova-plugin-network-information",
@@ -83,71 +99,19 @@ module.exports = [
         "runs": true
     },
     {
-        "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
-        "id": "cordova-plugin-splashscreen.SplashScreen",
-        "pluginId": "cordova-plugin-splashscreen",
+        "file": "plugins/com.telerik.plugins.nativepagetransitions/www/NativePageTransitions.js",
+        "id": "com.telerik.plugins.nativepagetransitions.NativePageTransitions",
+        "pluginId": "com.telerik.plugins.nativepagetransitions",
         "clobbers": [
-            "navigator.splashscreen"
-        ]
-    },
-    {
-        "file": "plugins/cordova-plugin-splashscreen/src/browser/SplashScreenProxy.js",
-        "id": "cordova-plugin-splashscreen.SplashScreenProxy",
-        "pluginId": "cordova-plugin-splashscreen",
-        "runs": true
-    },
-    {
-        "file": "plugins/cordova-plugin-badge/www/badge.js",
-        "id": "cordova-plugin-badge.Badge",
-        "pluginId": "cordova-plugin-badge",
-        "clobbers": [
-            "cordova.plugins.notification.badge"
-        ]
-    },
-    {
-        "file": "plugins/cordova-plugin-badge/src/browser/favico.min.js",
-        "id": "cordova-plugin-badge.Badge.Favico",
-        "pluginId": "cordova-plugin-badge",
-        "clobbers": [
-            "cordova.plugins.notification.badge.Favico"
-        ]
-    },
-    {
-        "file": "plugins/cordova-plugin-badge/src/browser/BadgeProxy.js",
-        "id": "cordova-plugin-badge.Badge.Proxy",
-        "pluginId": "cordova-plugin-badge",
-        "runs": true
-    },
-    {
-        "file": "plugins/cordova-plugin-local-notification/www/local-notification.js",
-        "id": "cordova-plugin-local-notification.LocalNotification",
-        "pluginId": "cordova-plugin-local-notification",
-        "clobbers": [
-            "cordova.plugins.notification.local"
-        ]
-    },
-    {
-        "file": "plugins/cordova-plugin-local-notification/www/local-notification-core.js",
-        "id": "cordova-plugin-local-notification.LocalNotification.Core",
-        "pluginId": "cordova-plugin-local-notification",
-        "clobbers": [
-            "cordova.plugins.notification.local.core",
-            "plugin.notification.local.core"
-        ]
-    },
-    {
-        "file": "plugins/cordova-plugin-local-notification/www/local-notification-util.js",
-        "id": "cordova-plugin-local-notification.LocalNotification.Util",
-        "pluginId": "cordova-plugin-local-notification",
-        "merges": [
-            "cordova.plugins.notification.local.core",
-            "plugin.notification.local.core"
+            "window.plugins.nativepagetransitions"
         ]
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
+    "cordova-plugin-firebase": "2.0.5",
+    "onesignal-cordova-plugin": "2.4.6",
     "cordova-plugin-network-information": "1.2.1",
     "cordova-plugin-inappbrowser": "3.0.0",
     "cordova-plugin-statusbar": "2.4.2",
@@ -155,9 +119,7 @@ module.exports.metadata =
     "cordova-plugin-dialogs": "2.0.1",
     "cordova-plugin-device": "2.0.2",
     "cordova-plugin-whitelist": "1.3.3",
-    "cordova-plugin-splashscreen": "5.0.2",
-    "cordova-plugin-badge": "0.8.7",
-    "cordova-plugin-local-notification": "0.9.0-beta.2"
+    "com.telerik.plugins.nativepagetransitions": "0.6.5"
 }
 // BOTTOM OF METADATA
 });

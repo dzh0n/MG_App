@@ -1,41 +1,32 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="ru.mg.app" version="1.4.5" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>Мужичок-грузовичок</name>
+<widget id="ru.mg.special" version="1.0.5" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>МГ Спецтехника</name>
     <description>
         Приложение сайта мужичок-грузовичок.рф
     </description>
-    <author email="support@phonegap.com" href="https://xn----dtbckhdelflyecx2bh6dk.xn--p1ai/">
+    <author email="on3473@gmail.com" href="https://xn----dtbckhdelflyecx2bh6dk.xn--p1ai">
         Мужичок-грузовичок
     </author>
-    <content src="index.html" />
-    <preference name="DisallowOverscroll" value="true" />
-    <preference name="Fullscreen" value="false" />
-    <preference name="orientation" value="portrait"/>
-    <preference name="android-minSdkVersion" value="23" />
+    <preference name="phonegap-version" value="cli-8.0.0" />
+    <preference name="android-build-tool" value="gradle" />
+    <preference name="android-minSdkVersion" value="16" />
     <preference name="android-targetSdkVersion" value="26" />
     <preference name="android-compileSdkVersion" value="26" />
-    <preference name="StatusBarOverlaysWebView" value="true" />
 
+    <plugin name="onesignal-cordova-plugin" spec="^2.4.1" source="npm" />
     <plugin name="cordova-plugin-network-information" source="npm" spec="~1.2.0" />
     <plugin name="cordova-plugin-inappbrowser" spec="~3.0.0" />
     <plugin name="cordova-plugin-statusbar" spec="~2.4.2" />
-    <plugin name="cordova-plugin-geolocation" spec="~4.0.1" />
     <plugin name="cordova-plugin-dialogs" spec="~2.0.1" />
     <plugin name="cordova-plugin-device" spec="~2.0.2" />
     <plugin name="cordova-plugin-whitelist" spec="~1.3.3" />
-    <plugin name="cordova-plugin-splashscreen" spec="~5.0.2" />
-    <plugin spec="https://github.com/katzer/cordova-plugin-local-notifications.git#a75c097" />
 
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="Fullscreen" value="false" />
+    <preference name="orientation" value="portrait"/>
+    <preference name="StatusBarOverlaysWebView" value="true" />
 
-    <preference name="ShowSplashScreenSpinner" value="false"/>
-
-    <platform name="browser">
-        <preference name="ShowSplashScreen" value="false" />
-    </platform>
-
-
-
-   <icon src="www/icon.png" />
+    <icon src="www/icon.png" />
     <platform name="android">
         <icon src="www/icon.png" density="ldpi" />
         <splash qualifier="land-ldpi" src="www/res/screen/android/drawable-land-ldpi-screen.png" />
@@ -50,6 +41,8 @@
         <splash qualifier="port-xhdpi" src="www/res/screen/android/drawable-port-xhdpi-screen.png" />
         <splash qualifier="port-xxhdpi" src="www/res/screen/android/drawable-port-xxhdpi-screen.png" />
         <splash qualifier="port-xxxhdpi" src="www/res/screen/android/drawable-port-xxxhdpi-screen.png" />
+
+
     </platform>
 
     <icon src="www/res/icons/ios/icon-120.png" platform="ios" width="120" height="120" />
@@ -58,14 +51,12 @@
     <icon src="www/res/icons/ios/icon-40.png" platform="ios" width="40" height="40" />
     <icon src="www/res/icons/ios/icon-1024.png" platform="ios" width="1024" height="1024" />
 
-
-
+    <content src="index.html" />
 
     <access origin="*" />
+
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" launch-external="yes" />
-    <allow-intent href="mailto:*" />
-    <allow-intent href="geo:*" />
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>

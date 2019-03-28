@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta name="format-detection" content="telephone=no"/>
+    <title></title>
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/animate.css" rel="stylesheet">
+    <link href="assets/fonts/roboto/roboto.css" rel="stylesheet">
+    <link href="assets/fonts/fontawesome/css/all.min.css" rel="stylesheet">
+</head>
+<body class="view-page animated fadeIn">
+
+<div class="wrapper">
+    <!-- header -->
+    <div class="header-fixed">
+        <div class="header-fixed-left">
+            <a href="javascript:;" onclick="back();"><i class="fas fa-arrow-left"></i></a>
+        </div>
+        <div class="header-fixed-center">
+            <h2>Заказ №<span id="order-id"></span></h2>
+        </div>
+        <div class="header-fixed-right">
+            <a href="javascript:;">&nbsp;</a>
+        </div>
+    </div>
+    <!-- header -->
+
+    <div class="advert-view">
+
+        <div class="advert-list-item">
+            <a href="javascript:;">
+                <h2 id="order-title"></h2>
+                <div class="date-item" id="order-date"></div>
+                <div class="text-item" id="order-content"></div>
+            </a>
+            <div class="bottom-item">
+                <div class="bottom-item-user">
+                    <i class="far fa-user-circle"></i> <span id="order-client_name"></span>
+                </div>
+                <div class="bottom-item-call">
+                    <a href="tel:" id="order-client_phone"><i class="fas fa-phone"></i> Позвонить</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="advert-item-address">
+            <i class="fas fa-map-marker-alt"></i>
+            <span id="order-address"></span>
+        </div>
+
+        <div id="y-map">
+            <script type="text/javascript" src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+        </div>
+        <script type="text/javascript">
+
+
+
+            function init() {
+                if(coords != '') {
+                    var map = new ymaps.Map('y-map', {
+                        center: coords.split(','),
+                        zoom: 16,
+                        controls: ['zoomControl','typeSelector','fullscreenControl'],
+                        behaviors: ['drag']
+                    });
+                    var placemark = new ymaps.Placemark(coords.split(','),
+                        {
+
+                        },
+                        {
+                            iconLayout: 'default#image',
+                            iconImageHref: 'assets/img/point.png',
+                            iconImageSize: [27, 41]
+                        });
+
+                    map.geoObjects.add(placemark);
+                    /*map.setBounds(map.geoObjects.getBounds(), {
+                        checkZoomRange: true,
+                        zoomMargin: 35
+                    });*/
+
+                    /*if(window.innerWidth<500)
+                        map.behaviors.disable('drag');*/
+                }
+
+            }
+        </script>
+
+
+    </div>
+
+
+
+</div><!-- .wrapper -->
+
+
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/global.js"></script>
+<script type="text/javascript" src="assets/js/view.js"></script>
+<script type="text/javascript">
+    app.initialize();
+</script>
+</body>
+</html>

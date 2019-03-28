@@ -1,111 +1,34 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-        <title>Мужичок-грузовичок</title>
-        <link rel="stylesheet" href="js/libs/fancybox/jquery.fancybox.min.css" />
-        <link rel="stylesheet" type="text/css" href="css/global.css" />
-        <link href="css/fonts/roboto/stylesheet.css" rel="stylesheet">
-        <link href="css/fonts/fontawesome/css/all.min.css" rel="stylesheet">
-    </head>
-    <body class="bar">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta name="format-detection" content="telephone=no"/>
+    <title></title>
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/fonts/roboto/roboto.css" rel="stylesheet">
+</head>
+<body class="start-page">
 
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <ul class="if-login-menu">
-            <li><a href="javascript:;"><i class="fas fa-user-tie"></i> <span id="userName">Плотников Евгений</span></a></li>
-            <li><a href="add.html"><i class="fas fa-plus-square"></i> Добавить заказ</a></li>
-            <li><a href="orders.html"><i class="fas fa-shopping-bag"></i> Мои заказы</a> </li>
-            <li><a href="offers.html"><i class="far fa-file-alt"></i> Мои предложения</a></li>
-           <!-- <li><a href="balance.html"><i class="far fa-money-bill-alt"></i> Баланс: <strong><span id="userBalance">0</span> ₽</strong></a></li> -->
-           <!-- <li><a href="notifications.html"><i class="far fa-bell"></i> Уведомления</a></li>-->
-            <li><a href="settings.html"><i class="fas fa-sliders-h"></i> Настройки</a></li>
-            <li><a href="javascript:;" onclick="logout();"><i class="fas fa-sign-out-alt"></i> Выйти</a></li>
-            <li>&nbsp;</li>
-            <li>&nbsp;</li>
-            <li><a href="#" onclick="window.open('tel://88002347102','_system')"><i class="fas fa-mobile-alt"></i> <span style="">8 800 2-347-102</span></a></li>
-            <li><a onclick="window.open('https://www.youtube.com/channel/UCmlhVUOuTMvlzSNBDQt_zcg', '_system');" href="#" target="_blank"><i class="fab fa-youtube"></i> YouTube</a></li>
-            <li><a onclick="window.open('https://www.youtube.com/watch?v=F87x36lsMJ0', '_system');"><i class="far fa-question-circle"></i> Как работает сервис</a></li>
-        </ul>
-        <ul class="no-login-menu">
-            <li><a href="javascript:;">Новый пользователь</a></li>
-            <li><a href="javascript:;"><i class="fas fa-map-marker-alt"></i> <span id="regionName"></span></a> </li>
-            <li><a href="registration.html"><i class="fas fa-user-plus"></i> Зарегистрироваться</a> </li>
-            <li><a href="login.html"><i class="fas fa-sign-in-alt"></i> Войти</a> </li>
-            <li><a href="remind.html"><i class="fas fa-user-secret"></i> Забыли пароль?</a> </li>
-            <li>&nbsp;</li>
-            <li>&nbsp;</li>
-            <li><a href="#" onclick="window.open('tel://88002347102','_system')"><i class="fas fa-mobile-alt"></i> <span style="">8 800 2-347-102</span></a></li>
-            <li><a onclick="window.open('https://www.youtube.com/channel/UCmlhVUOuTMvlzSNBDQt_zcg', '_system');" href="#" target="_blank"><i class="fab fa-youtube"></i> YouTube</a></li>
-            <li><a onclick="window.open('https://www.youtube.com/watch?v=F87x36lsMJ0', '_system');"><i class="far fa-question-circle"></i> Как работает сервис</a></li>
-        </ul>
+<div class="wrapper">
 
-    </div>
+<div class="main-logo">
+    <img src="assets/img/main-logo-n.png">
+    <h2>Спецтехника</h2>
+</div>
 
-    <div class="nav-bar">
-        <div class="nav-bar-wrap">
-            <a href="javascript:;" onclick="openNav()"><i class="fas fa-bars"></i></i></a>
-            <span>Мужичок-грузовичок<sup>&reg;</sup></span>
-            <a href="login.html" id="main-right-btn"><i class="fas fa-sign-in-alt"></i></a>
-        </div>
-    </div>
+    <div id="loading"></div>
 
-    <div class="main-blocks">
-        <div class="container">
-            <div class="left-block">
-                <div class="main-customer">
-                    <div class="main-customer-title">Я заказчик</div>
-                    <div class="main-customer-subtitle">Заказать услугу грузоперевозки или спецтехники</div>
-                    <button class="main-customer-button" data-fancybox="" data-src="#customer-popup">Заказать технику</button>
-                </div>
-            </div>
-            <div class="right-block">
-                <div class="main-owner">
-                    <div class="main-owner-title">Я владелец техники</div>
-                    <div class="main-owner-subtitle">Оказывать услуги по грузоперевозкам или аренде спецтехники</div>
-                    <button class="main-owner-button" data-fancybox="" data-src="#owner-popup">Перечень заявок</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="custom-fancy" id="customer-popup" style="display: none">
-        <div class="custom-fancy-content">
-            <div class="customer-btns-list">
-                <h2>Выберите нужные <br>вам действия</h2>
-                <div id="customer-buttons">
-                    <a href="add.html" class="black-btn">+ Добавить заказ</a>
-                    <a href="orders.html">Посмотреть предложения мне</a>
-                    <a href="g_orders.html">Посмотреть все заказы</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="custom-fancy" id="owner-popup" style="display: none">
-        <div class="custom-fancy-content">
-            <div class="customer-btns-list">
-                <h2>Выберите категорию <br>для поиска заказа</h2>
-                <select id="owner-links">
-                    <option value="g_orders.html">Грузоперевозки</option>
-                    <option value="s_orders.html">Спецтехника</option>
-                    <option value="sm_orders.html">Грузоперевозки (легковой автомобиль)</option>
-                </select>
-                <button id="owner-links-btn">Найти</button>
-            </div>
-        </div>
-    </div>
+</div><!-- .wrapper -->
 
 
-
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/libs/pulltorefresh.min.js"></script>
-    <script src="js/libs/fancybox/jquery.fancybox.min.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript">
-        app.initialize();
-    </script>
-    </body>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/global.js"></script>
+<script type="text/javascript" src="assets/js/index.js"></script>
+<script type="text/javascript">
+    app.initialize();
+</script>
+</body>
 </html>
+
