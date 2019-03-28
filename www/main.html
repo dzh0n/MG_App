@@ -7,6 +7,7 @@
     <title></title>
     <link href="assets/css/main.css" rel="stylesheet">
     <link href="assets/css/animate.css" rel="stylesheet">
+    <link href="assets/css/swiper.min.css" rel="stylesheet">
     <link href="assets/css/jquery.fancybox.min.css" rel="stylesheet">
     <link href="assets/fonts/roboto/roboto.css" rel="stylesheet">
     <link href="assets/fonts/fontawesome/css/all.min.css" rel="stylesheet">
@@ -87,11 +88,58 @@
     </div>
 </div>
 
+<div class="popup-slider">
+    <div class="popup-slider-bg"></div>
+    <div class="popup-slider-content">
+        <div class="swiper-container">
+
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                    <h2>Для вашего удобства у нас теперь два приложения</h2>
+                    <div class="app-row">
+                        <img src="assets/img/lorry.svg" height="35"> Грузоперевозки
+                    </div>
+                    <div class="app-row">
+                        <img src="assets/img/forklift.svg" height="35"> Спецтехника
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <h2>Приложения работают по единой учетной записи</h2>
+                </div>
+                <div class="swiper-slide">
+                    <h2>Для размещения заявки, регистрация не требуется</h2>
+                </div>
+                <div class="swiper-slide">
+                    <h2>Водителям: увидел заявку и позвонил заказчику<small>(Льготный период 30 звонков)</small></h2>
+                </div>
+                <div class="swiper-slide">
+                    <h2>Скачай приложение</h2>
+                    <div class="app-row">
+                        <img src="assets/img/forklift.svg" height="35"> Спецтехника
+                    </div>
+                    <a href="javascript:;"><img src="assets/img/g-app.png"></a>
+                </div>
+            </div>
+
+            <div class="swiper-pagination"></div>
+
+        </div>
+
+        <div>
+            <div class="slide-button-next">Далее</div>
+            <div class="skip-slider" onclick="window.localStorage.setItem('showSlider',1);$('.popup-slider').hide()">Пропустить</div>
+        </div>
+
+    </div>
+</div>
+
 
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="assets/js/jquery.touchSwipe.min.js"></script>
 <script type="text/javascript" src="assets/js/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="assets/js/swiper.min.js"></script>
 <script type="text/javascript" src="assets/js/global.js"></script>
 <script type="text/javascript" src="assets/js/main.js"></script>
 <script type="text/javascript">

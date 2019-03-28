@@ -82,6 +82,33 @@ document.addEventListener("deviceready", function(){
         $('#userBalance').text(window.localStorage.getItem("userBalance"));
     }
 
+
+    setTimeout(function () {
+        if(window.localStorage.getItem('showSlider') == null) {
+            $('.popup-slider').show();
+            var mySwiper = new Swiper ('.swiper-container', {
+                // Optional parameters
+
+                loop: false,
+
+                // If we need pagination
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+
+                // Navigation arrows
+                navigation: {
+                    nextEl: '.slide-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+
+            });
+        }
+    }, 4000);
+
+
+
+
     document.addEventListener("offline", onOffline, false);
 
     document.addEventListener("backbutton", function(e){

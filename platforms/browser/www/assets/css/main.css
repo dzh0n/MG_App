@@ -338,6 +338,7 @@ body {
     font-size: 20px;
     padding: 5px;
     margin: 10px 10px 0px 0px;
+    z-index: 100;
 }
 .slideMenu-content {
     padding: 20px 0px 20px;
@@ -595,4 +596,99 @@ body {
     padding-bottom: 5px;
     line-height: 1;
 
+}
+
+
+.popup-slider {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+.popup-slider-content {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.45);
+    border-radius: 5px;
+    padding: 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    z-index: 1100;
+    position: relative;
+}
+.swiper-container {
+    width: 100%;
+    min-height: 350px;
+    padding-bottom: 40px;
+}
+.slide-button-next {
+    background-color: #252525;
+    color: #ffffff;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 5px;
+    outline: none;
+    margin: 20px 0px 20px;
+
+}
+.skip-slider {
+    text-align: center;
+    font-size: 16px;
+    color: #4C4C4C;
+}
+.swiper-pagination-bullet-active {
+    background-color: #252525 !important;
+}
+.swiper-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.swiper-slide h2 {
+    text-align: center;
+    font-size: 1.6rem;
+    line-height: 1.2;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.swiper-slide h2 small {
+    display: block;
+    padding-top: 5px;
+    font-size: 1rem;
+    color: #646262;
+}
+.swiper-slide .app-row {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: #252525;
+    font-weight: 500;
+    width: 250px;
+    margin: 0px 0px 10px;
+    padding: 10px 0px;
+    border-bottom: #9c9c9c 1px solid;
+}
+.swiper-slide .app-row img {
+    margin-right: 20px;
+}
+.popup-slider-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.5);
+    z-index: 1050;
 }
