@@ -47,7 +47,12 @@
 
         <div class="advert-item-address">
             <i class="fas fa-map-marker-alt"></i>
-            <span id="order-address"></span>
+            <span id="order-address-from"></span>
+        </div>
+        <i class="fas fa-arrow-down" style="font-size: 15px; margin:5px 0px 5px 22px"></i>
+        <div class="advert-item-address" style="margin-bottom: 20px">
+            <i class="fas fa-map-marker-alt"></i>
+            <span id="order-address-to"></span>
         </div>
 
         <div id="y-map">
@@ -56,14 +61,30 @@
         <script type="text/javascript">
 
             setTimeout(function () {
-                if(coords != '') {
+                if(coords_from != '' && coords_to != '') {
+                    var multiRoute = new ymaps.multiRouter.MultiRoute({
+                        // Описание опорных точек мультимаршрута.
+                        referencePoints: [
+                            coords_from.split(','),
+                            coords_to.split(',')
+                        ],
+                        // Параметры маршрутизации.
+                        params: {
+                            // Ограничение на максимальное количество маршрутов, возвращаемое маршрутизатором.
+                            results: 2
+                        }
+                    }, {
+                        // Автоматически устанавливать границы карты так, чтобы маршрут был виден целиком.
+                        boundsAutoApply: true
+                    });
+
                     var map = new ymaps.Map('y-map', {
-                        center: coords.split(','),
+                        center: coords_from.split(','),
                         zoom: 16,
                         controls: ['zoomControl','typeSelector','fullscreenControl'],
                         behaviors: ['drag']
                     });
-                    var placemark = new ymaps.Placemark(coords.split(','),
+                    var placemark = new ymaps.Placemark(coords_from.split(','),
                         {
 
                         },
@@ -74,15 +95,27 @@
                         });
 
                     map.geoObjects.add(placemark);
-                    /*map.setBounds(map.geoObjects.getBounds(), {
+                    var placemark2 = new ymaps.Placemark(coords_to.split(','),
+                        {
+
+                        },
+                        {
+                            iconLayout: 'default#image',
+                            iconImageHref: 'assets/img/point.png',
+                            iconImageSize: [27, 41]
+                        });
+
+                    map.geoObjects.add(placemark2);
+                   /* map.setBounds(map.geoObjects.getBounds(), {
                         checkZoomRange: true,
                         zoomMargin: 35
                     });*/
+                    map.geoObjects.add(multiRoute);
 
                     /*if(window.innerWidth<500)
                         map.behaviors.disable('drag');*/
                 }
-            }, 2500);
+            }, 1500);
 
             function init() {
 

@@ -1,7 +1,8 @@
 var apiKey = getApiKey();
 var apiUrl = 'https://xn----dtbckhdelflyecx2bh6dk.xn--p1ai/vapi/';
 var db = openDatabase("mgs.db", '1.0', "MGS DateBase", 2 * 1024 * 1024);
-var coords = '';
+var coords_from = '';
+var coords_to = '';
 
 $(document).ready(function(){
 
@@ -240,6 +241,7 @@ function loadOrders() {
                     '            <a href="view.html#'+result.rows.item(i)['id']+'">\n' +
                     '                <h2>'+result.rows.item(i)['subject']+'</h2>\n' +
                     '                <div class="date-item">'+result.rows.item(i)['date_create']+'</div>\n' +
+                    '                <div class="route-item">'+result.rows.item(i)['address_from']+'<i class="fas fa-arrow-right"></i>'+result.rows.item(i)['address_to']+'</div>\n' +
                     '                <div class="text-item">\n'+result.rows.item(i)['content']+'</div>\n' +
                     '            </a>\n' +
                     '            <div class="bottom-item">\n' +
@@ -267,8 +269,10 @@ function loadOrder() {
                 $('#order-content').text(result.rows.item(i)['content']);
                 $('#order-client_name').text(result.rows.item(i)['client_name']);
                 $('#order-client_phone').data('tel', result.rows.item(i)['client_phone']);
-                $('#order-address').text(result.rows.item(i)['address']);
-                if(result.rows.item(i)['coords'] != '') {coords = result.rows.item(i)['coords']; init()}
+                $('#order-address-from').text(result.rows.item(i)['address_from']);
+                $('#order-address-to').text(result.rows.item(i)['address_to']);
+                if(result.rows.item(i)['coords_from'] != '') {coords_from = result.rows.item(i)['coords_from']; }
+                if(result.rows.item(i)['coords_to'] != '') {coords_to = result.rows.item(i)['coords_to']; }
             }
         }, null)
     });

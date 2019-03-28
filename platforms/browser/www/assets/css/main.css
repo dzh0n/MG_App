@@ -158,7 +158,7 @@ body {
     display: flex;
     align-items: center;
     color: #5A5A5A;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 .advert-item-address i {
     font-size: 22px;
@@ -167,6 +167,14 @@ body {
 .advert-item-address span {
     font-size: 14px;
     font-weight: 500;
+}
+.route-item {
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 14px;
+}
+.route-item i {
+    padding: 0px 5px;
 }
 #y-map {
     width: 100%;
