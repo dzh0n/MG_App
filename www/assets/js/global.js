@@ -151,7 +151,7 @@ function setParams() {
 
 
 
-    /*db.transaction(function(tx) {
+  /*  db.transaction(function(tx) {
         tx.executeSql("DROP TABLE Orders", [], function(result){}, function(tx, error){});
     });*/
 
@@ -163,11 +163,13 @@ function setParams() {
                 "  date_create TEXT,\n" +
                 "  subject TEXT,\n" +
                 "  content TEXT,\n" +
-                "  address TEXT,\n" +
+                "  address_from TEXT,\n" +
+                "  address_to TEXT,\n" +
                 "  client_name TEXT,\n" +
                 "  client_phone TEXT,\n" +
                 "  user_id INT,\n" +
-                "  coords TEXT,\n" +
+                "  coords_from TEXT,\n" +
+                "  coords_to TEXT,\n" +
                 "  is_pub INT)" , [], uploadOrders, null);
         })
     });
@@ -185,7 +187,7 @@ function uploadOrders(jsonData) {
     if(window.localStorage.getItem('regionId') != null) {
         //загрузка заказов
         $.ajax({
-            url: apiUrl+'orders/special',
+            url: apiUrl+'orders/transport',
             method: 'POST',
             async: false,
             data: 'key='+apiKey+'&region_id='+window.localStorage.getItem('regionId'),
@@ -197,17 +199,19 @@ function uploadOrders(jsonData) {
 
                     db.transaction(function (tx) {
                         $.each(result, function (index, value) {
-                            tx.executeSql("INSERT INTO Orders (id, region_id, date_create, subject, content, address, client_name, client_phone, user_id, coords, is_pub) values(?,?,?,?,?,?,?,?,?,?,?)", [
+                            tx.executeSql("INSERT INTO Orders (id, region_id, date_create, subject, content, address_from, address_to, client_name, client_phone, user_id, coords_from, coords_to, is_pub) values(?,?,?,?,?,?,?,?,?,?,?,?,?)", [
                                 value.id,
                                 value.region_id,
                                 value.date_create,
                                 value.subject,
                                 value.content,
-                                value.address,
+                                value.address_from,
+                                value.address_to,
                                 value.client_name,
                                 value.client_phone,
                                 value.user_id,
-                                value.coords,
+                                value.coords_from,
+                                value.coords_to,
                                 value.is_pub
                             ], function (result) {
 
