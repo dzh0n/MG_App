@@ -36,7 +36,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         window.plugins.OneSignal
-            .startInit("545e0ae9-f360-47cb-be70-8c8bab0ac2cc")
+            .startInit("4e49ee5d-becf-46c5-8eb3-88925a31f389")
             .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.Notification)
             .handleNotificationOpened(notificationOpenedCallback)
             .endInit();
