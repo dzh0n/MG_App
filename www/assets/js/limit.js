@@ -95,6 +95,14 @@ function sendPay(price) {
     });
 }
 
+document.addEventListener("deviceready", function() {
+
+    document.addEventListener("backbutton", function (e) {
+        back();
+    }, false);
+
+})
+
 function back() {
     location.replace('main.html');
     //navigator.app.backHistory();
