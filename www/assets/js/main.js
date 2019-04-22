@@ -83,7 +83,7 @@ document.addEventListener("deviceready", function(){
         $('#userLimit').text(window.localStorage.getItem("current_limit_calls"));
     }
 
-
+/*  slider
     setTimeout(function () {
         if(window.localStorage.getItem('showSlider') == null) {
             $('.popup-slider').show();
@@ -107,7 +107,7 @@ document.addEventListener("deviceready", function(){
         }
     }, 4000);
 
-
+*/
 
 
     document.addEventListener("offline", onOffline, false);
