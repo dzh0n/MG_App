@@ -111,6 +111,7 @@ function setParams() {
         success: function (result) {
             if(parseInt(result)>0) {
                 window.localStorage.setItem('limit_calls', result);
+
             }
         }
     });
@@ -216,7 +217,9 @@ function uploadOrders(jsonData) {
                                 value.is_pub
                             ], function (result) {
 
-                            }, null);
+                            }, function (tx,error) {
+                               // console.log(error);
+                            });
                         });
                     },null, function(){
                         if(parseInt(jsonData.notification.payload.additionalData.orderId) > 0) {
@@ -290,11 +293,11 @@ function checkLimit(tel) {
         return false;
     }
 
-    if(current == 0) {
+  /*  if(current == 0) {
         location.replace('limit.html');
         return false;
     }
-    else {
+    else {*/
         window.localStorage.setItem('current_limit_calls', current - 1);
         //alert(window.localStorage.getItem('current_limit_calls'));
         window.open('tel:'+tel,'_system');
@@ -307,7 +310,7 @@ function checkLimit(tel) {
 
             }
         });
-    }
+   // }
 }
 
 function getApiKey() {
